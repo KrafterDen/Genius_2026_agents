@@ -1,0 +1,433 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-09-25",
+  "release_compliance_certified": false,
+  "national_2027_category_rules_final": false,
+  "requirements": [
+    {
+      "id": "UK27-registration",
+      "stage": "ukraine_2027",
+      "value": {
+        "start": "2026-10-14",
+        "end": "2026-11-14",
+        "affiliate_end": "2026-11-22"
+      },
+      "source_ids": [
+        "S01"
+      ],
+      "source_locator": "Home / Строки проведення",
+      "status": "dated_2027_planning_window",
+      "caveat": "Reopen before applying; affiliation period is separate.",
+      "checked_on": "2026-09-25"
+    },
+    {
+      "id": "UK27-first_review",
+      "stage": "ukraine_2027",
+      "value": {
+        "window": "2026-12 to 2027-01",
+        "eco_pass": "2027-01"
+      },
+      "source_ids": [
+        "S01"
+      ],
+      "source_locator": "Home / Строки проведення",
+      "status": "dated_2027_planning_window",
+      "caveat": "",
+      "checked_on": "2026-09-25"
+    },
+    {
+      "id": "UK27-finals",
+      "stage": "ukraine_2027",
+      "value": {
+        "window": "2027-02 to 2027-03",
+        "format": null,
+        "presentation_duration_minutes": null
+      },
+      "source_ids": [
+        "S01",
+        "S02"
+      ],
+      "source_locator": "Home / Строки проведення; Categories / AI / final",
+      "status": "unresolved_conflict",
+      "caveat": "Home says format undecided; AI category page still describes 2026 offline finals.",
+      "checked_on": "2026-09-25"
+    },
+    {
+      "id": "UK-AI-team",
+      "stage": "ukraine_ai",
+      "value": {
+        "maximum_students": 2
+      },
+      "source_ids": [
+        "S02"
+      ],
+      "source_locator": "Categories / Категорія – ШТУЧНИЙ ІНТЕЛЕКТ / Вимоги",
+      "status": "published_working_baseline_pending_2027",
+      "caveat": "",
+      "checked_on": "2026-09-25"
+    },
+    {
+      "id": "UK-eligibility",
+      "stage": "ukraine_ai",
+      "value": {
+        "grades": [
+          8,
+          9,
+          10,
+          11
+        ],
+        "institution": "Ukrainian general secondary education institution",
+        "minimum_age_at_registration": 13,
+        "abroad_enrollment_case": null
+      },
+      "source_ids": [
+        "S03"
+      ],
+      "source_locator": "Participants / Участь школярів",
+      "status": "individual_case_unresolved",
+      "caveat": "Do not infer status from residence; real enrollment evidence is private.",
+      "checked_on": "2026-09-25"
+    },
+    {
+      "id": "UK-language",
+      "stage": "ukraine_ai",
+      "value": {
+        "project_languages": [
+          "uk",
+          "en"
+        ],
+        "requested_project_report_language": "uk"
+      },
+      "source_ids": [
+        "S03"
+      ],
+      "source_locator": "Participants / Вимоги до проєктів",
+      "status": "published_current_page",
+      "caveat": "English-only Speech exception does not apply to AI.",
+      "checked_on": "2026-09-25"
+    },
+    {
+      "id": "UK-AI-report-format",
+      "stage": "ukraine_ai",
+      "value": {
+        "uploads": [
+          "PDF",
+          "Word"
+        ],
+        "pdf_max_bytes": 5000000,
+        "word_max_bytes": null
+      },
+      "source_ids": [
+        "S02"
+      ],
+      "source_locator": "Categories / AI / Вимоги",
+      "status": "published_working_baseline_pending_2027",
+      "caveat": "Page says PDF up to 5 MB and Word; no Word size cap located.",
+      "checked_on": "2026-09-25"
+    },
+    {
+      "id": "UK-AI-report-pages",
+      "stage": "ukraine_ai",
+      "value": {
+        "max_counted_pages": 15,
+        "title_counted": false,
+        "references_counted": false,
+        "appendices_counted": true
+      },
+      "source_ids": [
+        "S02"
+      ],
+      "source_locator": "Categories / AI / Вимоги",
+      "status": "published_working_baseline_pending_2027",
+      "caveat": "",
+      "checked_on": "2026-09-25"
+    },
+    {
+      "id": "UK-AI-report-layout",
+      "stage": "ukraine_ai",
+      "value": {
+        "fonts": [
+          "Calibri",
+          "Arial"
+        ],
+        "font_pt": [
+          11,
+          12
+        ],
+        "margins_cm": 2.5
+      },
+      "source_ids": [
+        "S02"
+      ],
+      "source_locator": "Categories / AI / Вимоги",
+      "status": "published_working_baseline_pending_2027",
+      "caveat": "",
+      "checked_on": "2026-09-25"
+    },
+    {
+      "id": "UK-AI-video",
+      "stage": "ukraine_ai",
+      "value": {
+        "required": true,
+        "max_seconds": 300,
+        "language": "en",
+        "content": "working-project screen recording",
+        "youtube_title_pattern": "GENIUS AI Ukraine_YEAR_TITLE",
+        "youtube_link_due": "project registration"
+      },
+      "source_ids": [
+        "S02"
+      ],
+      "source_locator": "Categories / AI / Вимоги",
+      "status": "published_working_baseline_pending_2027",
+      "caveat": "Actual upload/link needs human release approval.",
+      "checked_on": "2026-09-25"
+    },
+    {
+      "id": "UK-AI-results",
+      "stage": "ukraine_ai",
+      "value": {
+        "results_required": true
+      },
+      "source_ids": [
+        "S02"
+      ],
+      "source_locator": "Categories / AI / Вимоги",
+      "status": "published_working_baseline_pending_2027",
+      "caveat": "No fabricated or synthetic-as-real results.",
+      "checked_on": "2026-09-25"
+    },
+    {
+      "id": "UK-registration-route",
+      "stage": "ukraine_ai",
+      "value": {
+        "routes": [
+          "individual",
+          "affiliated institution/teacher"
+        ],
+        "one_route_only": true,
+        "eco_pass_for_final": true
+      },
+      "source_ids": [
+        "S03"
+      ],
+      "source_locator": "Participants / Є два способи реєстрації",
+      "status": "published_current_page",
+      "caveat": "Actual route needs genuine participant information; no duplicate registration.",
+      "checked_on": "2026-09-25"
+    },
+    {
+      "id": "INT-AI-eligibility",
+      "stage": "international_ai",
+      "value": {
+        "age_min": 13,
+        "age_max": 18,
+        "university_started_by_finals": false,
+        "other_restrictions": null
+      },
+      "source_ids": [
+        "S04"
+      ],
+      "source_locator": "Disciplines / GENIUS AI / Eligibility",
+      "status": "published_current_page",
+      "caveat": "Page says a few restrictions apply, not enumerated in audited AI section.",
+      "checked_on": "2026-09-25"
+    },
+    {
+      "id": "INT-AI-team",
+      "stage": "international_ai",
+      "value": {
+        "min_students": 1,
+        "max_students": 2
+      },
+      "source_ids": [
+        "S04"
+      ],
+      "source_locator": "Disciplines / GENIUS AI / Team Size",
+      "status": "published_current_page",
+      "caveat": "",
+      "checked_on": "2026-09-25"
+    },
+    {
+      "id": "INT-AI-paper",
+      "stage": "international_ai",
+      "value": {
+        "required": true,
+        "format": "PDF",
+        "language": "en",
+        "max_total_pages_including_cover_and_references": 20,
+        "max_file_bytes": null
+      },
+      "source_ids": [
+        "S04",
+        "S05"
+      ],
+      "source_locator": "Disciplines / GENIUS AI / Research Paper; template p.1",
+      "status": "published_current_page",
+      "caveat": "Template has six instruction pages; submitted paper limit is 20 total pages.",
+      "checked_on": "2026-09-25"
+    },
+    {
+      "id": "INT-AI-template-layout",
+      "stage": "international_ai",
+      "value": {
+        "fonts": [
+          "Calibri",
+          "Arial",
+          "Helvetica"
+        ],
+        "main_font_pt": [
+          10,
+          11
+        ],
+        "reference_font_pt_minimum_or_allowed": 9,
+        "line_spacing": [
+          "single",
+          1.15
+        ],
+        "margin_min_cm": 2.0,
+        "figure_captions_with_tool_or_source": true
+      },
+      "source_ids": [
+        "S05"
+      ],
+      "source_locator": "Template p.1",
+      "status": "published_current_page",
+      "caveat": "",
+      "checked_on": "2026-09-25"
+    },
+    {
+      "id": "INT-AI-abstract",
+      "stage": "international_ai",
+      "value": {
+        "max_words": 250
+      },
+      "source_ids": [
+        "S05"
+      ],
+      "source_locator": "Template p.1 / Abstract",
+      "status": "published_current_page",
+      "caveat": "",
+      "checked_on": "2026-09-25"
+    },
+    {
+      "id": "INT-AI-required-sections",
+      "stage": "international_ai",
+      "value": {
+        "sections": [
+          "title page",
+          "abstract",
+          "introduction",
+          "goal/research question",
+          "AI model/system",
+          "results and evaluation",
+          "cost and scalability",
+          "conclusions",
+          "student roles and external resources/contributions",
+          "references"
+        ],
+        "acknowledgments": "optional"
+      },
+      "source_ids": [
+        "S05"
+      ],
+      "source_locator": "Template pp.1–6",
+      "status": "published_current_page",
+      "caveat": "",
+      "checked_on": "2026-09-25"
+    },
+    {
+      "id": "INT-AI-video",
+      "stage": "international_ai",
+      "value": {
+        "required": true,
+        "max_seconds": 180,
+        "language": "en",
+        "narration": true,
+        "content": [
+          "problem",
+          "AI/technology explanation",
+          "model screen recording"
+        ],
+        "youtube_viewable_link": true
+      },
+      "source_ids": [
+        "S04"
+      ],
+      "source_locator": "Disciplines / GENIUS AI / Project Video",
+      "status": "published_current_page",
+      "caveat": "Actual student voice/recording and upload status remain human gates.",
+      "checked_on": "2026-09-25"
+    },
+    {
+      "id": "INT-AI-finals",
+      "stage": "international_ai",
+      "value": {
+        "presentation_max_minutes": 5,
+        "qa_minutes": "4–5",
+        "posters_allowed": false,
+        "presenters": "students only"
+      },
+      "source_ids": [
+        "S04"
+      ],
+      "source_locator": "Disciplines / GENIUS AI / Presentation at Finals",
+      "status": "published_current_page",
+      "caveat": "",
+      "checked_on": "2026-09-25"
+    },
+    {
+      "id": "INT-AI-student-work",
+      "stage": "international_ai",
+      "value": {
+        "meaningful_student_work_required": true,
+        "role_and_external_contribution_disclosure_required": true
+      },
+      "source_ids": [
+        "S04",
+        "S05"
+      ],
+      "source_locator": "Disciplines / GENIUS AI / AI Project Requirement; template pp.5–6",
+      "status": "published_current_page",
+      "caveat": "Agent work cannot be attributed to student.",
+      "checked_on": "2026-09-25"
+    },
+    {
+      "id": "INT-AI-theme",
+      "stage": "international_ai",
+      "value": {
+        "annual_topic": "none stated",
+        "scope": "environment/sustainability"
+      },
+      "source_ids": [
+        "S04"
+      ],
+      "source_locator": "Disciplines / GENIUS AI FAQ",
+      "status": "published_current_page",
+      "caveat": "Coding wildfire theme and Speech AI environmental-cost topic are separate.",
+      "checked_on": "2026-09-25"
+    },
+    {
+      "id": "INT-AI-rubric",
+      "stage": "international_ai",
+      "value": {
+        "total_points": 75,
+        "presentation": 5,
+        "technical_understanding": 5,
+        "methodology": 10,
+        "cost": 5,
+        "end_product": 10,
+        "novelty": 20,
+        "environmental_solution": 10,
+        "overall": 10
+      },
+      "source_ids": [
+        "S04"
+      ],
+      "source_locator": "Disciplines / GENIUS AI / Judging Rubric",
+      "status": "published_current_page",
+      "caveat": "International AI rubric; do not call it the national rubric.",
+      "checked_on": "2026-09-25"
+    }
+  ]
+}

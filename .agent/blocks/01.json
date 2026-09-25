@@ -1,13 +1,24 @@
 {
   "block_id": "01",
-  "status": "not_started",
-  "started_at": null,
-  "ended_at": null,
-  "elapsed_minutes": null,
-  "under_target_reason": null,
-  "gates": [],
-  "evidence": [],
-  "actual_models": [],
+  "status": "passed",
+  "started_at": "2026-09-25T16:31:03Z",
+  "ended_at": "2026-09-25T16:51:49Z",
+  "elapsed_minutes": 20.767,
+  "under_target_reason": "Scoped primary pages and PDFs were directly reachable; two bounded read-only workers supplied parallel audits; a conditional question and useful depth traces were resolved without experiments. No idle time or worker-minutes added.",
+  "gates": [
+    {"name": "material rules and industrial claims have opened primary sources and exact scope", "passed": true, "evidence_path": "docs/validation/B01_source_audit.md", "command": null},
+    {"name": "historical criteria are not universal/current recycler rules", "passed": true, "evidence_path": "configs/recycler_profiles.json", "command": null},
+    {"name": "national and international deliverables and unresolved eligibility separated", "passed": true, "evidence_path": "submission/deliverables_plan.json", "command": null},
+    {"name": "narrow measurable problem conditional after independent challenge", "passed": true, "evidence_path": "research/challenges/01_problem.md", "command": null}
+  ],
+  "evidence": ["research/problem_evidence.md", "research/claims.csv", "configs/recycler_profiles.json", "docs/requirements_current.json", "docs/requirements_conflicts.md", "submission/deliverables_plan.json", "research/challenges/01_problem.md", "research/decisions/ADR-001-problem.md", "docs/source_inspection_B01.md", "docs/validation/B01_source_audit.md", ".agent/block_reports/B01.md"],
+  "actual_models": [
+    {"surface": "desktop root", "requested": "gpt-6-sol/high", "observed": "unknown; not exposed"},
+    {"surface": "desktop organizer worker", "requested": "gpt-6-luna/xhigh", "observed": "spawn accepted; runtime metadata not exposed"},
+    {"surface": "desktop industrial challenger", "requested": "gpt-6-sol/medium", "observed": "spawn accepted; runtime metadata not exposed"}
+  ],
   "blockers": [],
-  "next_action": "Execute TextileRoute_Codex_Prompt_Pack/prompts/01_*.md after dependencies pass."
+  "next_action": "cat STATUS.json .agent/execplans/B02.md TextileRoute_Codex_Prompt_Pack/prompts/02_PRIOR_ART_CHALLENGE.md",
+  "source_ids": ["S01", "S02", "S03", "S04", "S05", "S06", "S09", "S10", "S11", "S28", "S29", "S30", "S31", "S32", "S33", "S34"],
+  "changed_files": ["PROJECT.md", "configs/project.json", "private.example.json", "HUMAN_ACTIONS.md", "configs/recycler_profiles.json", "research/claims.csv", "research/search_log.jsonl", "research/sources.jsonl", "research/problem_evidence.md", "research/challenges/01_problem.md", "research/decisions/ADR-001-problem.md", "docs/requirements_current.json", "docs/requirements_conflicts.md", "docs/source_inspection_B01.md", "docs/validation/B01_source_audit.md", "submission/deliverables_plan.json", "scripts/validate_repository.py", ".agent/execplans/B01.md", ".agent/blocks/01.json", ".agent/block_reports/B01.md"]
 }

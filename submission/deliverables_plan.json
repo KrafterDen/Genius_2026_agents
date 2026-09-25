@@ -1,0 +1,183 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-09-25",
+  "submission_ready": false,
+  "submitted": false,
+  "note": "Planning inventory only; national AI requirements are a working published baseline pending 2027 update. No upload/contact is authorized.",
+  "artifacts": [
+    {
+      "id": "UK-report-pdf",
+      "stage": "ukraine_ai",
+      "path": "submission/uk/report_uk.pdf",
+      "kind": "PDF",
+      "source_ids": [
+        "S02",
+        "S03"
+      ],
+      "requirement_status": "published_working_baseline_pending_2027",
+      "artifact_status": "not_started",
+      "verification": "Rendered page count <=15 excluding title and references but including appendices; <=5,000,000 bytes; visual layout and source/claim checks.",
+      "release_gate": "2027 category recheck and actual authorship"
+    },
+    {
+      "id": "UK-report-word",
+      "stage": "ukraine_ai",
+      "path": "submission/uk/report_uk.docx",
+      "kind": "DOCX",
+      "source_ids": [
+        "S02"
+      ],
+      "requirement_status": "published_working_baseline_pending_2027",
+      "artifact_status": "not_started",
+      "verification": "Content agreement with national PDF; Calibri/Arial 11/12 and 2.5 cm margins.",
+      "release_gate": "2027 category recheck and actual authorship"
+    },
+    {
+      "id": "UK-demo-video",
+      "stage": "ukraine_ai",
+      "path": "video/demo_uk_or_shared.mp4",
+      "kind": "MP4",
+      "source_ids": [
+        "S02"
+      ],
+      "requirement_status": "published_working_baseline_pending_2027",
+      "artifact_status": "not_started",
+      "verification": "Probe actual duration <=300 seconds; English narration and screen recording of working system; claims agree with ledger.",
+      "release_gate": "participant narration and publication approval"
+    },
+    {
+      "id": "UK-demo-link",
+      "stage": "ukraine_ai",
+      "path": "private/uk_youtube_link.json",
+      "kind": "private URL record",
+      "source_ids": [
+        "S02"
+      ],
+      "requirement_status": "published_working_baseline_pending_2027",
+      "artifact_status": "needs_human",
+      "verification": "Verify YouTube viewability and published title pattern at submission; do not invent URL.",
+      "release_gate": "explicit user approval to upload"
+    },
+    {
+      "id": "UK-registration",
+      "stage": "ukraine_ai",
+      "path": "private/participant.json",
+      "kind": "private participant/registration fields",
+      "source_ids": [
+        "S01",
+        "S03"
+      ],
+      "requirement_status": "published_current_page",
+      "artifact_status": "needs_human",
+      "verification": "Verify grade, Ukrainian-school enrollment, age at registration, one route only, applicable consents, actual portal fields.",
+      "release_gate": "actual participant facts and organizer clarification if necessary"
+    },
+    {
+      "id": "UK-final-presentation",
+      "stage": "ukraine_ai",
+      "path": "presentation/national_final_draft.pptx",
+      "kind": "provisional presentation",
+      "source_ids": [
+        "S01",
+        "S02"
+      ],
+      "requirement_status": "unresolved_2027_final_format",
+      "artifact_status": "not_started",
+      "verification": "Recheck 2027 final mode, duration and format before finalizing.",
+      "release_gate": "organizer final instructions and participant defense"
+    },
+    {
+      "id": "INT-research-paper",
+      "stage": "international_ai",
+      "path": "submission/international/report_en.pdf",
+      "kind": "PDF",
+      "source_ids": [
+        "S04",
+        "S05"
+      ],
+      "requirement_status": "published_current_page",
+      "artifact_status": "not_started",
+      "verification": "English; <=20 total pages including cover/references; <=250-word abstract; required sections, layout, all pages visually inspected; claims from verified ledger.",
+      "release_gate": "actual student roles and external help disclosure"
+    },
+    {
+      "id": "INT-editable-companion",
+      "stage": "international_ai",
+      "path": "submission/international/report_en.docx",
+      "kind": "DOCX",
+      "source_ids": [
+        "S05"
+      ],
+      "requirement_status": "recommended_supporting_not_required_upload",
+      "artifact_status": "not_started",
+      "verification": "Content agreement with international PDF.",
+      "release_gate": "none unless portal requests"
+    },
+    {
+      "id": "INT-video",
+      "stage": "international_ai",
+      "path": "video/demo_en.mp4",
+      "kind": "MP4",
+      "source_ids": [
+        "S04"
+      ],
+      "requirement_status": "published_current_page",
+      "artifact_status": "not_started",
+      "verification": "Probe actual duration <=180 seconds; English narration; problem, AI explanation and model screen recording.",
+      "release_gate": "participant narration and upload approval"
+    },
+    {
+      "id": "INT-video-link",
+      "stage": "international_ai",
+      "path": "private/international_youtube_link.json",
+      "kind": "private URL record",
+      "source_ids": [
+        "S04"
+      ],
+      "requirement_status": "published_current_page",
+      "artifact_status": "needs_human",
+      "verification": "Verify viewable-by-link URL only after authorized upload.",
+      "release_gate": "explicit user approval to upload"
+    },
+    {
+      "id": "INT-final-presentation",
+      "stage": "international_ai",
+      "path": "presentation/final_deck.pptx",
+      "kind": "presentation",
+      "source_ids": [
+        "S04"
+      ],
+      "requirement_status": "published_current_page",
+      "artifact_status": "not_started",
+      "verification": "Time <=5 minutes; prepare 4–5 minute Q&A; no poster requirement.",
+      "release_gate": "actual student defense"
+    },
+    {
+      "id": "RESEARCH-evidence",
+      "stage": "supporting",
+      "path": "docs/dataset_card.md",
+      "kind": "research documentation",
+      "source_ids": [
+        "S06"
+      ],
+      "requirement_status": "recommended_supporting",
+      "artifact_status": "not_started",
+      "verification": "Verified data license/files, independent groups, labels and limits; no restricted raw redistribution.",
+      "release_gate": "dataset audit"
+    },
+    {
+      "id": "RESEARCH-contribution",
+      "stage": "supporting",
+      "path": "contribution/contributions_draft.md",
+      "kind": "authorship ledger",
+      "source_ids": [
+        "S04",
+        "S05"
+      ],
+      "requirement_status": "required_for_international_paper",
+      "artifact_status": "not_started",
+      "verification": "Compare actual student log with AI-use log and external contributions; leave placeholders until true.",
+      "release_gate": "meaningful student-owned work"
+    }
+  ]
+}

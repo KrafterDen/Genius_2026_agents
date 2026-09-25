@@ -144,8 +144,8 @@ def validate_sources(root: Path) -> None:
         if line.strip():
             records.append(json.loads(line))
     observed = [item.get("id") for item in records]
-    if observed != ids:
-        raise ValidationError("source register differs from immutable seed IDs/order")
+    if observed[:len(ids)] != ids or len(observed) != len(set(observed)):
+        raise ValidationError("source register must preserve seed IDs/order and have unique additions")
     if any(not item.get("url") or not item.get("retrieval_status") for item in records):
         raise ValidationError("source register lacks URL/retrieval status")
     with (root / "research/claims.csv").open(newline="", encoding="utf-8") as handle:
@@ -154,7 +154,7 @@ def validate_sources(root: Path) -> None:
             raise ValidationError("claims register lacks required columns")
         for row in rows:
             for source_id in row["source_ids"].split(";"):
-                if source_id and source_id not in ids:
+                if source_id and source_id not in observed:
                     raise ValidationError(f"unknown claim source ID: {source_id}")
 
 
