@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "status": "frozen_design_only_no_model_fit_or_test_execution",
+  "dataset": "OpenTextile-NIR v1.0 small tables",
+  "basis": "71 physical pieces, 70 conservative parent-prefix groups; 68 nominally labeled pieces in 67 groups; 3 unknown rows unscored",
+  "data_access_before_plan": "B03 inspected all 71 IDs and composition metadata for feasibility; no previously sealed final test exists",
+  "group_key": "numeric prefix in sample_N-...; both sample_45 pieces remain together",
+  "outer_design": {
+    "purpose": "internal exploratory grouped out-of-fold prediction, not an independent confirmatory final test",
+    "fold_count": 5,
+    "assignment_algorithm": "sort all 70 distinct parent IDs by ascending SHA-256 hex digest of UTF-8 string TextileRoute:B04:v1:20260925:<group_id>; assign consecutive sorted groups round-robin to folds 0..4",
+    "label_blind_assignment": true,
+    "group_ids_by_fold": {
+      "0": [
+        "11",
+        "22",
+        "24",
+        "26",
+        "27",
+        "28",
+        "34",
+        "38",
+        "48",
+        "55",
+        "56",
+        "57",
+        "61",
+        "62"
+      ],
+      "1": [
+        "3",
+        "5",
+        "12",
+        "15",
+        "21",
+        "23",
+        "31",
+        "36",
+        "39",
+        "43",
+        "58",
+        "60",
+        "65",
+        "68"
+      ],
+      "2": [
+        "2",
+        "4",
+        "7",
+        "14",
+        "18",
+        "20",
+        "25",
+        "29",
+        "30",
+        "45",
+        "52",
+        "59",
+        "66",
+        "70"
+      ],
+      "3": [
+        "8",
+        "10",
+        "13",
+        "16",
+        "19",
+        "32",
+        "35",
+        "37",
+        "46",
+        "47",
+        "50",
+        "53",
+        "54",
+        "67"
+      ],
+      "4": [
+        "1",
+        "6",
+        "9",
+        "17",
+        "33",
+        "40",
+        "41",
+        "42",
+        "44",
+        "49",
+        "51",
+        "63",
+        "64",
+        "69"
+      ]
+    },
+    "known_composition_only_for_metrics": true,
+    "unknown_composition_groups": "assigned to folds for bookkeeping but excluded from supervised fit and scored denominators",
+    "folds_are_not_independent_trials": true
+  },
+  "inner_design": {
+    "purpose": "choose only prespecified estimator hyperparameters and any future descriptive action margin within each outer-training partition",
+    "fold_count": 4,
+    "assignment_algorithm": "within the composition-labeled outer-training groups, sort by SHA-256 of UTF-8 string TextileRoute:B04:inner:v1:<outer_fold>:<group_id>; assign round-robin to inner folds 0..3",
+    "metric": "group-equal MAE on the primary supplier nominal cotton+wool+lyocell share",
+    "tie_break": "choose lower complexity: fewer PLS components or larger Ridge regularization; then lexical configuration ID",
+    "no_outer_label_use": "all fitting, learned scaling, model/hyperparameter/action-margin selection use only the outer-training groups"
+  },
+  "calibration": {
+    "formal_selective_risk_calibration": false,
+    "reason": "too few independently labeled positive groups and no chemical reference or verified IID sampling; inner folds are selection, not a separate valid risk calibration set"
+  },
+  "final_evaluation": {
+    "dedicated_sealed_final_set": false,
+    "reason": "all source composition metadata inspected in B03 and a small holdout would further deplete sparse groups; any pooled outer result is exploratory only",
+    "future_confirmation": "new independent audited data and newly frozen protocol required before confirmatory claims"
+  },
+  "preprocessing_boundary": "fixed mathematical spectrum transforms may be applied per piece; any fitted centering, scaling, imputation, feature selection, dimensionality reduction, model parameters and thresholds remain inside each inner or outer training boundary",
+  "no_retuning": "after any outer out-of-fold predictions are opened, changes to family, grid, target, split, metric, inclusion or advertised threshold are logged as exploratory and cannot replace the registered result",
+  "randomness": "outer/inner assignment uses SHA-256 deterministic strings; any later stochastic learner/paired resampling uses seed 20260925, with library versions pinned at implementation time",
+  "no_execution": "No split used for fitting or scoring in B04; this mapping is protocol metadata, not a performance test."
+}

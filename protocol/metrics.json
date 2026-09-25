@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "status": "preregistered_definition_only_no_predictions_or_tests",
+  "source": "OpenTextile-NIR v1.0, supplier nominal composition",
+  "units": {
+    "piece_id": "Label",
+    "conservative_parent_group": "sample number before first hyphen",
+    "known_labeled_pieces": 68,
+    "known_labeled_parent_groups": 67,
+    "unknown_composition_pieces_unscored": 3,
+    "flagged_outlier_pieces_retained_in_primary": 11,
+    "group_weighting": "each parent group contributes equal total weight; within a group, average piece losses"
+  },
+  "reference": {
+    "primary_name": "paper_defined_nominal_natural_fibre_share",
+    "primary_formula_percentage_points": "Cotton [%] + Wool [%] + Lyocell [%] from one 100-point supplier composition row",
+    "blank_component_policy": "only a row with known complete nominal 100-point total may use an unlisted component as nominal zero for this arithmetic; this is never a chemically verified zero",
+    "bounds": [
+      0,
+      100
+    ],
+    "label_truth_claim": "supplier-reported nominal composition only; source's term natural fibre is reproduced as a formula, including lyocell, without asserting a chemical taxonomy",
+    "unknown_flag_policy": "no supervised metric; never relabel as zero or negative",
+    "source_outlier_flag_policy": "retain all 11 in primary; flag-stratified reports are secondary because source flag derives from whole-dataset model residuals"
+  },
+  "primary_endpoint": {
+    "id": "group_equal_mae_author_defined_share",
+    "formula": "(1/G) * sum over parent groups g [ (1/n_g) * sum over labeled pieces i in g abs(clip(yhat_i,0,100)-y_i) ]",
+    "denominator": "G=67 parent groups with nominal known composition; each contributes once",
+    "unit": "percentage points",
+    "comparison": "outer-group out-of-fold PLS minus outer-group out-of-fold group-weighted training-median constant baseline on the same parent groups",
+    "reported_difference_formula": "MAE_constant - MAE_PLS; positive values favor PLS",
+    "method_selection_note": "a positive internal difference is exploratory, not an unbiased estimate of a later winner selected from these results"
+  },
+  "secondary_metrics": [
+    {
+      "id": "group_equal_rmse_author_defined_share",
+      "formula": "sqrt((1/G) * sum_g [(1/n_g) * sum_i (clip(yhat_i,0,100)-y_i)^2])",
+      "unit": "percentage points",
+      "caveat": "published 5.18-point RMSE used a different 57-piece outlier-excluded and tuned population; no direct equivalence"
+    },
+    {
+      "id": "group_equal_mae_polyester",
+      "formula": "same group-equal MAE, with nominal Polyester [%] as y",
+      "role": "exploratory routing-relevant continuous outcome"
+    },
+    {
+      "id": "group_equal_mae_cotton",
+      "formula": "same group-equal MAE, with nominal Cotton [%] as y",
+      "role": "exploratory routing-relevant continuous outcome"
+    },
+    {
+      "id": "flag_stratum_mae",
+      "formula": "report group-equal MAE separately for 11 flagged and 57 unflagged nominal rows without removing either from primary training/evaluation",
+      "role": "label-provenance sensitivity"
+    }
+  ],
+  "optional_composition_proxy_actions_if_later_executed": {
+    "status": "descriptive_only_no_formal_risk_control",
+    "actions": {
+      "ACCEPT": "automatic acceptance for a named historical fibre-composition proxy only",
+      "REVIEW": "no automatic acceptance; human inspection would be required and its accuracy is unmeasured",
+      "DECLINE": "automatic nonacceptance for that proxy; other routing options not evaluated"
+    },
+    "eligibility_label": "reported fibre percentage at or above the named historical threshold; unknown and boundary-ambiguous rows are reported separately",
+    "evaluated_profiles": [
+      "JRC2024_MECH_COTTON80",
+      "JRC2024_CHEM_POLYESTER95"
+    ],
+    "context_only_profile": "INFINITED_COTTON88_PREFERENCE is approximate and not a binary acceptance specification",
+    "counts": [
+      "accepted eligible TP",
+      "accepted ineligible FP",
+      "reviewed eligible",
+      "reviewed ineligible",
+      "declined eligible FN",
+      "declined ineligible TN",
+      "unlabeled/unresolved"
+    ],
+    "selected_set_false_acceptance_risk": "FP/(TP+FP) on evaluated nominal-label pieces; undefined if TP+FP=0",
+    "automatic_acceptance_coverage": "(TP+FP)/number of evaluated nominal-label pieces; zero when none accepted",
+    "review_rate": "number REVIEW / number of input pieces, with explicit labeled-only and all-71 denominators",
+    "false_rejection_rate": "declined eligible / (eligible accepted + eligible reviewed + eligible declined); REVIEW is separately reported, not silently counted as a false decline",
+    "eligible_nonacceptance_rate": "(eligible reviewed + eligible declined) / number eligible; distinguishes lost automatic coverage from erroneous decline",
+    "review_oracle": "a perfect reviewer using supplier labels is only a hypothetical upper-bound simulation; no actual reviewer accuracy or industrial route is observed",
+    "label_error_sensitivity": "if a of accepted pieces include e nominal errors and up to k accepted labels are hypothetically wrong, report [max(0,e-k)/a, min(a,e+k)/a], with k stated as assumption; undefined for a=0",
+    "model": "separate cotton and polyester PLS estimators using same fixed spectral transforms, inner components 1..10 and outer groups",
+    "fixed_review_margins_percentage_points": [
+      0,
+      2
+    ],
+    "action_rule": "for reported threshold T and fixed margin m, ACCEPT if clipped predicted fibre share >= T+m, DECLINE if < T-m, REVIEW otherwise",
+    "margin_selection": "both margins reported; neither selected from outer results; no operator review budget validated",
+    "unknown_metadata_policy": "three source-flagged unknown-composition rows are unscored and displayed unresolved/REVIEW by evaluation policy only; this uses released metadata, not a spectral unknown detector or deployable feature"
+  },
+  "mass_stream_metric": {
+    "status": "unidentifiable_from_current_data",
+    "required": [
+      "mass per accepted whole item",
+      "verified fibre fractions or contaminant assays",
+      "information on layers/trims/coatings and processing limits"
+    ],
+    "non_equivalence": "item-count precision does not imply mass purity or contamination"
+  },
+  "uncertainty": {
+    "method_if_executed": "paired resampling of parent-group outer out-of-fold losses, 10000 draws, fixed seed 20260925; descriptive 2.5/97.5 percentiles",
+    "interpretation": "conditional exploratory variation for this sample and CV procedure, not a theorem for population generalization, chemical truth or selective risk",
+    "no_fold_multiplication": "five folds and resampling do not increase the number of independent physical groups"
+  }
+}

@@ -1,13 +1,93 @@
 {
   "block_id": "04",
-  "status": "not_started",
-  "started_at": null,
-  "ended_at": null,
-  "elapsed_minutes": null,
-  "under_target_reason": null,
-  "gates": [],
-  "evidence": [],
-  "actual_models": [],
-  "blockers": [],
-  "next_action": "Execute TextileRoute_Codex_Prompt_Pack/prompts/04_*.md after dependencies pass."
+  "status": "passed",
+  "started_at": "2026-09-25T17:41:33Z",
+  "ended_at": "2026-09-25T17:50:23Z",
+  "elapsed_minutes": 8.8,
+  "under_target_reason": "B03 already established actual source/group/label counts; primary grouped-validation and risk sources were directly accessible; two read-only workers challenged in parallel and the narrowed design was decisive. No padding, idle or worker-minutes counted.",
+  "gates": [
+    {
+      "name": "selected-set risk distinguished from marginal coverage and batch purity",
+      "passed": true,
+      "evidence_path": "protocol/risk_analysis.md",
+      "command": null
+    },
+    {
+      "name": "independent groups, calibration boundaries and no retuning explicit",
+      "passed": true,
+      "evidence_path": "protocol/split_plan.json",
+      "command": null
+    },
+    {
+      "name": "risk sample-size arithmetic reproducible; impossible useful guarantees removed",
+      "passed": true,
+      "evidence_path": "protocol/risk_analysis.md",
+      "command": "n>=ceil(log(0.05)/log(1-r)); zero-error upper=1-0.05^(1/n)"
+    },
+    {
+      "name": "primary/secondary, negative and inconclusive outcomes before result access",
+      "passed": true,
+      "evidence_path": "protocol/preregistered_protocol.md",
+      "command": null
+    }
+  ],
+  "evidence": [
+    "protocol/preregistered_protocol.md",
+    "protocol/metrics.json",
+    "protocol/split_plan.json",
+    "protocol/risk_analysis.md",
+    "protocol/test_access_log.jsonl",
+    "research/challenges/04_statistics.md",
+    "research/decisions/ADR-004-protocol.md",
+    ".agent/block_reports/B04.md"
+  ],
+  "actual_models": [
+    {
+      "surface": "desktop root",
+      "requested": "gpt-6-sol/high",
+      "observed": "unknown; not exposed"
+    },
+    {
+      "surface": "read-only statistical challenger",
+      "requested": "gpt-6-astra/high",
+      "observed": "spawn accepted and findings received; runtime metadata not exposed"
+    },
+    {
+      "surface": "read-only evaluation reviewer",
+      "requested": "gpt-6-sol/medium",
+      "observed": "spawn accepted and findings received; runtime metadata not exposed"
+    }
+  ],
+  "blockers": [
+    "B04 expected metric-contract test artifact omitted: current user/root AGENTS.md prohibit creating or running tests",
+    "No untouched final set or credible formal-risk calibration capacity on current dataset"
+  ],
+  "next_action": "cat STATUS.json NEXT.md TextileRoute_Codex_Prompt_Pack/prompts/05_DATA_PIPELINE.md",
+  "source_ids": [
+    "S14",
+    "S15",
+    "S16",
+    "S17",
+    "S39",
+    "S40",
+    "S50",
+    "S55",
+    "S56",
+    "S57"
+  ],
+  "changed_files": [
+    "protocol/preregistered_protocol.md",
+    "protocol/metrics.json",
+    "protocol/split_plan.json",
+    "protocol/risk_analysis.md",
+    "protocol/test_access_log.jsonl",
+    "research/challenges/04_statistics.md",
+    "research/decisions/ADR-004-protocol.md",
+    "research/sources.jsonl",
+    "research/search_log.jsonl",
+    ".agent/execplans/B04.md",
+    ".agent/blocks/04.json",
+    ".agent/block_reports/B04.md"
+  ],
+  "protocol_sha256": "65ed47e79118e45a8d46453f3b5cb53993558e2b8f8157ddc597e3b73cc8dfd7"
 }
