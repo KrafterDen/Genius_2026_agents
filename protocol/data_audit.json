@@ -1,0 +1,443 @@
+{
+  "schema_version": 1,
+  "as_of_utc": "2026-09-25",
+  "primary_dataset": "OpenTextile-NIR v1.0",
+  "audit_type": "read_only_real_metadata_and_mean_spectrum_inventory",
+  "source_manifest": "data/manifests/dataset_manifest.json",
+  "reproduce": "python scripts/audit_open_textile_metadata.py data/raw/open_textile_zenodo_18269172 > .agent/runtime/open_textile_audit.json",
+  "inventory": {
+    "sample_rows": 71,
+    "distinct_ids": 71,
+    "physical_parent_id_groups_conservative": 70,
+    "multi_piece_parent_groups": {
+      "45": [
+        "sample_45-1-1",
+        "sample_45-2-1"
+      ]
+    },
+    "flags": {
+      "unflagged": 57,
+      "outlier": 11,
+      "unknown": 3
+    },
+    "composition_sum_counts": {
+      "100.0": 68,
+      "0": 3
+    },
+    "reported_fibre_count_distribution": {
+      "3": 23,
+      "2": 35,
+      "1": 10,
+      "0": 3
+    },
+    "table_rows_and_id_consistency": {
+      "ground_truth_final.csv": {
+        "rows": 71,
+        "distinct_ids": 71,
+        "missing_from_ground_truth": [],
+        "missing_from_table": []
+      },
+      "swir_mean_spectra.csv": {
+        "rows": 71,
+        "distinct_ids": 71,
+        "missing_from_ground_truth": [],
+        "missing_from_table": []
+      },
+      "swir_mean_spectra_coordinates.csv": {
+        "rows": 71,
+        "distinct_ids": 71,
+        "missing_from_ground_truth": [],
+        "missing_from_table": []
+      },
+      "rgb_mean_values.csv": {
+        "rows": 71,
+        "distinct_ids": 71,
+        "missing_from_ground_truth": [],
+        "missing_from_table": []
+      }
+    },
+    "swir_mean_spectra": {
+      "bands": 288,
+      "wavelength_min": 953.04,
+      "wavelength_max": 2547.64,
+      "wavelength_monotone": true,
+      "nonempty_values": 20448,
+      "missing_cells": 0,
+      "nonfinite_values": 0,
+      "value_min": 0.018593097,
+      "value_max": 0.8384839,
+      "negative_values": 0,
+      "values_over_one": 0,
+      "lowest_mean_reflectance_id": "sample_34-1",
+      "highest_mean_reflectance_id": "sample_26-1",
+      "representative_piece_means": {
+        "sample_4-1": {
+          "mean_reflectance": 0.5518354711458333
+        },
+        "sample_15-1": {
+          "mean_reflectance": 0.6663605102430555
+        },
+        "sample_2-1": {
+          "mean_reflectance": 0.6084932012500001
+        },
+        "sample_24-1": {
+          "mean_reflectance": 0.630467117361111
+        },
+        "sample_14-1": {
+          "mean_reflectance": 0.6096311522916666
+        }
+      }
+    },
+    "invalid_swir_roi_ids": []
+  },
+  "profiles": {
+    "JRC2024_MECH_COTTON80": {
+      "fibre": "Cotton [%]",
+      "threshold_percent": 80,
+      "status_counts": {
+        "unflagged_below": 51,
+        "unflagged_above_or_at": 6,
+        "flagged_outlier_below": 10,
+        "flagged_outlier_above_or_at": 1,
+        "unknown_composition": 3
+      },
+      "ids_by_status": {
+        "unflagged_below": [
+          "sample_1-1",
+          "sample_2-1",
+          "sample_3-1",
+          "sample_5-1",
+          "sample_6-1",
+          "sample_7-1",
+          "sample_8-1",
+          "sample_10-1",
+          "sample_11-1",
+          "sample_15-1",
+          "sample_18-1",
+          "sample_19-1",
+          "sample_20-1",
+          "sample_21-1",
+          "sample_22-1",
+          "sample_23-1",
+          "sample_26-1",
+          "sample_27-1",
+          "sample_29-1",
+          "sample_30-1",
+          "sample_31-1",
+          "sample_33-1",
+          "sample_35-1",
+          "sample_36-1",
+          "sample_38-1",
+          "sample_39-1",
+          "sample_40-1",
+          "sample_41-1",
+          "sample_42-1",
+          "sample_43-1",
+          "sample_44-1",
+          "sample_45-1-1",
+          "sample_45-2-1",
+          "sample_46-1",
+          "sample_47-1",
+          "sample_48-1",
+          "sample_50-1",
+          "sample_51-1",
+          "sample_53-1",
+          "sample_54-1",
+          "sample_56-1",
+          "sample_57-1",
+          "sample_58-1",
+          "sample_59-1",
+          "sample_62-1",
+          "sample_63-1",
+          "sample_64-1",
+          "sample_65-1",
+          "sample_67-1",
+          "sample_69-1",
+          "sample_70-1"
+        ],
+        "unflagged_above_or_at": [
+          "sample_4-1",
+          "sample_16-1",
+          "sample_17-1",
+          "sample_52-1",
+          "sample_55-1",
+          "sample_68-1"
+        ],
+        "flagged_outlier_below": [
+          "sample_9-1",
+          "sample_12-1",
+          "sample_14-1",
+          "sample_25-1",
+          "sample_28-1",
+          "sample_34-1",
+          "sample_49-1",
+          "sample_60-1",
+          "sample_61-1",
+          "sample_66-1"
+        ],
+        "flagged_outlier_above_or_at": [
+          "sample_13-1"
+        ],
+        "unknown_composition": [
+          "sample_24-1",
+          "sample_32-1",
+          "sample_37-1"
+        ]
+      },
+      "within_five_percentage_points": {
+        "80.0": [
+          "sample_17-1",
+          "sample_52-1"
+        ],
+        "75.0": [
+          "sample_46-1",
+          "sample_50-1"
+        ]
+      }
+    },
+    "JRC2024_CHEM_POLYESTER95": {
+      "fibre": "Polyester [%]",
+      "threshold_percent": 95,
+      "status_counts": {
+        "unflagged_below": 47,
+        "unflagged_above_or_at": 10,
+        "flagged_outlier_below": 9,
+        "flagged_outlier_above_or_at": 2,
+        "unknown_composition": 3
+      },
+      "ids_by_status": {
+        "unflagged_below": [
+          "sample_1-1",
+          "sample_2-1",
+          "sample_4-1",
+          "sample_6-1",
+          "sample_7-1",
+          "sample_8-1",
+          "sample_10-1",
+          "sample_11-1",
+          "sample_16-1",
+          "sample_17-1",
+          "sample_18-1",
+          "sample_19-1",
+          "sample_20-1",
+          "sample_23-1",
+          "sample_29-1",
+          "sample_30-1",
+          "sample_35-1",
+          "sample_38-1",
+          "sample_39-1",
+          "sample_40-1",
+          "sample_41-1",
+          "sample_42-1",
+          "sample_43-1",
+          "sample_44-1",
+          "sample_45-1-1",
+          "sample_45-2-1",
+          "sample_46-1",
+          "sample_47-1",
+          "sample_48-1",
+          "sample_50-1",
+          "sample_51-1",
+          "sample_52-1",
+          "sample_53-1",
+          "sample_54-1",
+          "sample_55-1",
+          "sample_56-1",
+          "sample_57-1",
+          "sample_58-1",
+          "sample_59-1",
+          "sample_62-1",
+          "sample_63-1",
+          "sample_64-1",
+          "sample_65-1",
+          "sample_67-1",
+          "sample_68-1",
+          "sample_69-1",
+          "sample_70-1"
+        ],
+        "unflagged_above_or_at": [
+          "sample_3-1",
+          "sample_5-1",
+          "sample_15-1",
+          "sample_21-1",
+          "sample_22-1",
+          "sample_26-1",
+          "sample_27-1",
+          "sample_31-1",
+          "sample_33-1",
+          "sample_36-1"
+        ],
+        "flagged_outlier_below": [
+          "sample_9-1",
+          "sample_12-1",
+          "sample_13-1",
+          "sample_25-1",
+          "sample_34-1",
+          "sample_49-1",
+          "sample_60-1",
+          "sample_61-1",
+          "sample_66-1"
+        ],
+        "flagged_outlier_above_or_at": [
+          "sample_14-1",
+          "sample_28-1"
+        ],
+        "unknown_composition": [
+          "sample_24-1",
+          "sample_32-1",
+          "sample_37-1"
+        ]
+      },
+      "within_five_percentage_points": {
+        "91.0": [
+          "sample_1-1"
+        ],
+        "97.0": [
+          "sample_3-1",
+          "sample_22-1"
+        ],
+        "99.0": [
+          "sample_5-1"
+        ],
+        "100.0": [
+          "sample_14-1",
+          "sample_15-1",
+          "sample_21-1",
+          "sample_27-1",
+          "sample_28-1",
+          "sample_31-1",
+          "sample_33-1",
+          "sample_36-1"
+        ],
+        "96.0": [
+          "sample_26-1"
+        ],
+        "92.0": [
+          "sample_34-1"
+        ]
+      }
+    },
+    "INFINITED_COTTON88_PREFERENCE": {
+      "fibre": "Cotton [%]",
+      "threshold_percent": 88,
+      "status_counts": {
+        "unflagged_below": 53,
+        "unflagged_above_or_at": 4,
+        "flagged_outlier_below": 10,
+        "flagged_outlier_above_or_at": 1,
+        "unknown_composition": 3
+      },
+      "ids_by_status": {
+        "unflagged_below": [
+          "sample_1-1",
+          "sample_2-1",
+          "sample_3-1",
+          "sample_5-1",
+          "sample_6-1",
+          "sample_7-1",
+          "sample_8-1",
+          "sample_10-1",
+          "sample_11-1",
+          "sample_15-1",
+          "sample_17-1",
+          "sample_18-1",
+          "sample_19-1",
+          "sample_20-1",
+          "sample_21-1",
+          "sample_22-1",
+          "sample_23-1",
+          "sample_26-1",
+          "sample_27-1",
+          "sample_29-1",
+          "sample_30-1",
+          "sample_31-1",
+          "sample_33-1",
+          "sample_35-1",
+          "sample_36-1",
+          "sample_38-1",
+          "sample_39-1",
+          "sample_40-1",
+          "sample_41-1",
+          "sample_42-1",
+          "sample_43-1",
+          "sample_44-1",
+          "sample_45-1-1",
+          "sample_45-2-1",
+          "sample_46-1",
+          "sample_47-1",
+          "sample_48-1",
+          "sample_50-1",
+          "sample_51-1",
+          "sample_52-1",
+          "sample_53-1",
+          "sample_54-1",
+          "sample_56-1",
+          "sample_57-1",
+          "sample_58-1",
+          "sample_59-1",
+          "sample_62-1",
+          "sample_63-1",
+          "sample_64-1",
+          "sample_65-1",
+          "sample_67-1",
+          "sample_69-1",
+          "sample_70-1"
+        ],
+        "unflagged_above_or_at": [
+          "sample_4-1",
+          "sample_16-1",
+          "sample_55-1",
+          "sample_68-1"
+        ],
+        "flagged_outlier_below": [
+          "sample_9-1",
+          "sample_12-1",
+          "sample_14-1",
+          "sample_25-1",
+          "sample_28-1",
+          "sample_34-1",
+          "sample_49-1",
+          "sample_60-1",
+          "sample_61-1",
+          "sample_66-1"
+        ],
+        "flagged_outlier_above_or_at": [
+          "sample_13-1"
+        ],
+        "unknown_composition": [
+          "sample_24-1",
+          "sample_32-1",
+          "sample_37-1"
+        ]
+      },
+      "within_five_percentage_points": {
+        "90.0": [
+          "sample_13-1",
+          "sample_55-1"
+        ],
+        "92.0": [
+          "sample_68-1"
+        ]
+      }
+    }
+  },
+  "physical_unit": "cut textile piece from post-industrial garment; parent ID inferred conservatively from sample prefix",
+  "label_provenance": "waste supplier/manufacturer garment composition; not chemical assay; contemporary garment composition may differ",
+  "ambiguity_policy": {
+    "blank_fibre_cell": "unreported component; conditional zero for a complete nominal composition row only, never chemical zero",
+    "unknown_flag": "unlabeled; do not assign eligible/ineligible",
+    "outlier_flag": "model-residual based across whole dataset; retain as separate uncertain stratum, never globally exclude before split",
+    "rounded_percentages": "integer-valued nominal percentages; exact threshold values are boundary ambiguous under rounding and supplier error",
+    "whole_item_conditions": "unobserved; composition proxy only"
+  },
+  "alternative_dataset": {
+    "name": "NIST NIR-SORT 2.0",
+    "metadata_audited": true,
+    "physical_fabrics_per_official_description": 113,
+    "sample_file_retrieved": false,
+    "profile_counts_verified": false,
+    "reason": "NIST RMM and license URL available; bounded direct file requests timed out with zero bytes; official MDF/Globus mirror did not expose verified anonymous per-file bytes"
+  },
+  "decision": "Narrow H02-1 to H02-2, a grouped exploratory/reproduction and dataset limitation study. No selective-risk guarantee or industrial routing validation from OpenTextile.",
+  "performance_results": "none; no model fit or tests run"
+}

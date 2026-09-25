@@ -1,11 +1,11 @@
-# Next action — B03 real data and target feasibility
+# Next action — B04 protocol and risk analysis
 
-B00–B02 passed. B02 found no verified new method; the proposed domain comparison remains conditional on actual data and labels. No data files, license, model result, environmental effect or participant eligibility have been verified. `submission_ready=false`.
+B00–B03 passed. B03 verified six CC BY 4.0 OpenTextile small files and found 71 physical pieces in 70 conservative parent-prefix groups. Historical 80% cotton and 95% polyester proxy positives are too sparse and too weakly labelled for a strong selective-risk claim. ADR-003 therefore selects H02-2, an exploratory grouped audit/reproduction question. No model, experiment, performance result or final-test access exists. NIST specimen files remain inaccessible from the direct endpoint; HyperTex is embargoed. `submission_ready=false`.
 
 From this repository root, run this exact read command before continuing in Codex:
 
 ```sh
-cat STATUS.json .agent/execplans/B03.md TextileRoute_Codex_Prompt_Pack/prompts/03_DATA_AUDIT.md
+cat STATUS.json NEXT.md TextileRoute_Codex_Prompt_Pack/prompts/04_PROTOCOL_AND_RISK.md
 ```
 
-Then execute the B03 prompt in this task. Inspect the actual source license and file manifest before any download. Retrieve small metadata and mean spectra first; audit independent physical groups and threshold-relevant labels, comparing OpenTextile against NIST NIR-SORT 2.0. HyperTex files are embargoed until 2026-09-30. The current request does not authorize creating or running tests; do not create parser fixtures or run optional parser robustness tests. Do not run the external runner recursively. If interrupted, resume from the B03 plan and B02 report.
+Then execute B04 in this task, creating `.agent/execplans/B04.md` before substantive work. Use `protocol/data_audit.md`, `protocol/grouping.json`, `protocol/target_feasibility.csv`, ADR-003 and the project scientific contract to define the narrowed question, independent-unit boundaries, feasible metrics and negative-result policy. Do not claim a finite-sample risk guarantee from the current dataset. The current user request and root AGENTS.md prohibit creating or running tests, even though B04's template lists a metric-test artifact; record that conflict honestly and do not generate the test. Do not run the external runner recursively or access final-test information. If interrupted, B03's report, state and ignored local manifest/raw files are the recovery checkpoint.

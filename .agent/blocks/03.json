@@ -1,13 +1,99 @@
 {
   "block_id": "03",
-  "status": "not_started",
-  "started_at": null,
-  "ended_at": null,
-  "elapsed_minutes": null,
-  "under_target_reason": null,
-  "gates": [],
-  "evidence": [],
-  "actual_models": [],
-  "blockers": [],
-  "next_action": "Execute TextileRoute_Codex_Prompt_Pack/prompts/03_*.md after dependencies pass."
+  "status": "passed",
+  "started_at": "2026-09-25T17:22:01Z",
+  "ended_at": "2026-09-25T17:40:14Z",
+  "elapsed_minutes": 18.2,
+  "under_target_reason": "Six small OpenTextile files and API metadata were accessible promptly; two read-only workers completed independent source and label audits in parallel; decisive sparse-positive and supplier-label findings made further model or large-data work inappropriate. No waiting or worker-minutes were counted.",
+  "gates": [
+    {
+      "name": "real file retrieval and license verified or explicitly blocked",
+      "passed": true,
+      "evidence_path": "data/manifests/dataset_manifest.json",
+      "command": "Zenodo API record 18269172 and six source-MD5 matches; NIST file access failure logged"
+    },
+    {
+      "name": "physical pieces and dependence counted, not pixels",
+      "passed": true,
+      "evidence_path": "protocol/data_audit.json",
+      "command": "python scripts/audit_open_textile_metadata.py data/raw/open_textile_zenodo_18269172 > .agent/runtime/open_textile_audit.json"
+    },
+    {
+      "name": "independent nominal positive/negative cases for narrowed target",
+      "passed": true,
+      "evidence_path": "protocol/target_feasibility.csv",
+      "command": "real metadata inventory of 71 pieces/70 conservative groups; strong risk claim explicitly rejected"
+    },
+    {
+      "name": "unknown/ambiguous composition never silently exact negative or zero",
+      "passed": true,
+      "evidence_path": "docs/dataset_card.md",
+      "command": null
+    }
+  ],
+  "evidence": [
+    "data/manifests/dataset_manifest.json",
+    "protocol/data_audit.json",
+    "protocol/data_audit.md",
+    "docs/dataset_card.md",
+    "protocol/grouping.json",
+    "protocol/target_feasibility.csv",
+    "research/challenges/03_data.md",
+    "research/decisions/ADR-003-data-gate.md",
+    ".agent/block_reports/B03.md"
+  ],
+  "actual_models": [
+    {
+      "surface": "desktop root",
+      "requested": "gpt-6-sol/high",
+      "observed": "unknown; not exposed"
+    },
+    {
+      "surface": "read-only access worker",
+      "requested": "gpt-6-luna/xhigh",
+      "observed": "spawn accepted and findings received; runtime metadata not exposed"
+    },
+    {
+      "surface": "read-only label challenger",
+      "requested": "gpt-6-sol/medium",
+      "observed": "spawn accepted and findings received; runtime metadata not exposed"
+    }
+  ],
+  "blockers": [
+    "NIST specimen-level source files and file-specific license could not be retrieved from official endpoint; MDF/Globus mirror file access unconfirmed",
+    "HyperTex files embargoed until 2026-09-30",
+    "No assay-grade OpenTextile composition labels or sufficient positives for a strong selective-risk claim"
+  ],
+  "next_action": "cat STATUS.json NEXT.md TextileRoute_Codex_Prompt_Pack/prompts/04_PROTOCOL_AND_RISK.md",
+  "source_ids": [
+    "S08",
+    "S09",
+    "S29",
+    "S37",
+    "S38",
+    "S50",
+    "S51",
+    "S52",
+    "S53",
+    "S54"
+  ],
+  "changed_files": [
+    "PROJECT.md",
+    "configs/project.json",
+    "configs/recycler_profiles.json",
+    "research/candidate_hypotheses.json",
+    "research/sources.jsonl",
+    "research/search_log.jsonl",
+    "docs/dataset_card.md",
+    "protocol/data_audit.json",
+    "protocol/data_audit.md",
+    "protocol/grouping.json",
+    "protocol/target_feasibility.csv",
+    "research/challenges/03_data.md",
+    "research/decisions/ADR-003-data-gate.md",
+    "scripts/audit_open_textile_metadata.py",
+    ".agent/execplans/B03.md",
+    ".agent/blocks/03.json",
+    ".agent/block_reports/B03.md"
+  ]
 }

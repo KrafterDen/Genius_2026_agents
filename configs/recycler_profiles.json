@@ -7,42 +7,90 @@
       "id": "JRC2024_MECH_COTTON80",
       "status": "historical_2024_snapshot_scenario",
       "process": "mechanical fibre-to-fibre recycling",
-      "source_ids": ["S09"],
+      "source_ids": [
+        "S09"
+      ],
       "source_locator": "JRC141441 section 2.4.1.1, Table 5, printed page 26 / PDF page 30; adjacent sections 2.4.1.2-5",
       "source_year": 2025,
       "criterion_snapshot_year": 2024,
-      "composition_proxy": {"fibre": "cotton", "operator": ">=", "percent": 80, "basis": "reported supplier composition, not chemical assay"},
-      "other_conditions_not_in_proxy": ["reusable-garment triage", "dryness", "colour sorting", "trims and hardware", "coatings and finishes", "layers", "structure", "elastane detection", "specific recycler agreement"],
+      "composition_proxy": {
+        "fibre": "cotton",
+        "operator": ">=",
+        "percent": 80,
+        "basis": "reported supplier composition, not chemical assay"
+      },
+      "other_conditions_not_in_proxy": [
+        "reusable-garment triage",
+        "dryness",
+        "colour sorting",
+        "trims and hardware",
+        "coatings and finishes",
+        "layers",
+        "structure",
+        "elastane detection",
+        "specific recycler agreement"
+      ],
       "source_qualification": "JRC says feedstock requirements can change; no claim this threshold is a current universal rule.",
-      "dataset_feasibility": "not_audited",
+      "dataset_feasibility": "OpenTextile 6 unflagged nominal eligible / 51 ineligible pieces; insufficient for confirmatory selective-risk evaluation",
       "full_acceptance_validated": false
     },
     {
       "id": "JRC2024_CHEM_POLYESTER95",
       "status": "historical_2024_snapshot_scenario",
       "process": "chemical polyester fibre-to-fibre recycling",
-      "source_ids": ["S09"],
+      "source_ids": [
+        "S09"
+      ],
       "source_locator": "JRC141441 section 2.4.1.1, Table 5, printed page 26 / PDF page 30",
       "source_year": 2025,
       "criterion_snapshot_year": 2024,
-      "composition_proxy": {"fibre": "polyester", "operator": ">=", "percent": 95, "basis": "reported supplier composition, not chemical assay"},
-      "other_conditions_not_in_proxy": ["reusable-garment triage", "contaminants", "trims and hardware", "coatings and finishes", "layers", "moisture", "specific chemical-process agreement"],
+      "composition_proxy": {
+        "fibre": "polyester",
+        "operator": ">=",
+        "percent": 95,
+        "basis": "reported supplier composition, not chemical assay"
+      },
+      "other_conditions_not_in_proxy": [
+        "reusable-garment triage",
+        "contaminants",
+        "trims and hardware",
+        "coatings and finishes",
+        "layers",
+        "moisture",
+        "specific chemical-process agreement"
+      ],
       "source_qualification": "Table prints '>=95 polyester' without a percent sign in that entry; percentage interpretation follows the composition context and needs confirmation before freeze. Historical scenario, not a current operator contract.",
-      "dataset_feasibility": "not_audited",
+      "dataset_feasibility": "OpenTextile 10 unflagged nominal eligible / 47 ineligible pieces; insufficient for confirmatory selective-risk evaluation",
       "full_acceptance_validated": false
     },
     {
       "id": "INFINITED_COTTON88_PREFERENCE",
       "status": "public_operator_preference_not_acceptance_specification",
       "process": "cellulose regeneration from cotton-rich feedstock",
-      "source_ids": ["S28", "S29"],
+      "source_ids": [
+        "S28",
+        "S29"
+      ],
       "source_locator": "Operator Our technology: How it works; FAQ Technology, opened 2026-09-25, page publication date unstated",
       "source_year": null,
       "criterion_snapshot_year": null,
-      "composition_proxy": {"fibre": "cotton", "operator": "approximately_at_least", "percent": 88, "basis": "public preference statement; not a precise lot-acceptance threshold"},
-      "other_conditions_not_in_proxy": ["reusable-garment triage", "actual purchase agreement", "quality tolerance", "contaminant limits", "sorting/preprocessing", "synthetic-fibre and dye removal", "buttons and zippers"],
+      "composition_proxy": {
+        "fibre": "cotton",
+        "operator": "approximately_at_least",
+        "percent": 88,
+        "basis": "public preference statement; not a precise lot-acceptance threshold"
+      },
+      "other_conditions_not_in_proxy": [
+        "reusable-garment triage",
+        "actual purchase agreement",
+        "quality tolerance",
+        "contaminant limits",
+        "sorting/preprocessing",
+        "synthetic-fibre and dye removal",
+        "buttons and zippers"
+      ],
       "source_qualification": "Operator says about/at least 88% cotton is preferred; this is not a verified current contract. Use only for sensitivity/context unless a real specification is obtained.",
-      "dataset_feasibility": "not_audited",
+      "dataset_feasibility": "OpenTextile 4 unflagged nominal above-approximate-preference / 53 below; not an exact acceptance target",
       "full_acceptance_validated": false
     }
   ]

@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "dataset": "OpenTextile-NIR v1.0",
+  "physical_piece_id_field": "Label",
+  "physical_piece_count": 71,
+  "highest_identifiable_group": "parent sample number before the first hyphen in sample_N-...",
+  "parent_group_count": 70,
+  "rationale": "The two sample_45 entries have different piece indices and composition labels. Their shared parent number may denote one garment or batch, so keep them in one group. Other shared supplier or acquisition batches are not identified and residual dependence remains possible.",
+  "known_shared_parent": {
+    "45": ["sample_45-1-1", "sample_45-2-1"]
+  },
+  "units_never_independent": ["pixels within a SWIR cube", "spectral bands", "spatial positions or ROIs of one piece", "RGB views of a piece", "augmentations of one piece"],
+  "splitting_rule_if_future_experiment_is_authorized": "Assign all observations from a parent group to one partition. Fit all preprocessing inside training folds. Keep any calibration and final evaluation group-disjoint. Do not use full-dataset residual outlier flags as a prospective exclusion criterion.",
+  "limitations": ["Parent prefix semantics are inferred from identifiers rather than confirmed by source documentation.", "Manufacturer, supplier or acquisition batch identifiers are absent from the released small tables.", "One mean spectrum per physical piece is available in the small file; no pixel-level independence claim is permitted."],
+  "status": "pre-experiment protocol only; no split created or evaluated"
+}

@@ -1,11 +1,14 @@
 {
   "schema_version": 1,
   "project": "TextileRoute",
-  "active_block": "03",
-  "project_stage": "data_audit_pending",
+  "active_block": "04",
+  "project_stage": "protocol_design_after_data_gate",
   "submission_ready": false,
   "student_contribution_verified": false,
-  "last_checkpoint": "2026-09-25T17:17:25Z",
-  "blocked_on": [],
-  "next_action": "cat STATUS.json .agent/execplans/B03.md TextileRoute_Codex_Prompt_Pack/prompts/03_DATA_AUDIT.md"
+  "last_checkpoint": "2026-09-25T17:40:14Z",
+  "blocked_on": [
+    "NIST file access for stronger dataset; optional, not required for narrowed local protocol",
+    "authentic student contribution and participant release gates"
+  ],
+  "next_action": "cat STATUS.json NEXT.md TextileRoute_Codex_Prompt_Pack/prompts/04_PROTOCOL_AND_RISK.md"
 }
