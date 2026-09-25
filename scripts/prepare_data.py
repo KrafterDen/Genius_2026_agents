@@ -31,15 +31,16 @@ def main() -> int:
             processed_dir=root / "data/processed/open_textile_v1",
             split_output_path=root / "data/splits/open_textile_v1_frozen_outer_folds.json",
             protocol_path=root / "protocol/preregistered_protocol.md",
+            repository_root=root,
             implementation_paths=(
-                root / "src/textileroute/data/open_textile.py",
-                root / "src/textileroute/data/splits.py",
-                root / "src/textileroute/data/prepare.py",
-                root / "src/textileroute/spectra/transforms.py",
-                root / "scripts/prepare_data.py",
+                "src/textileroute/data/open_textile.py",
+                "src/textileroute/data/splits.py",
+                "src/textileroute/data/prepare.py",
+                "src/textileroute/spectra/transforms.py",
+                "scripts/prepare_data.py",
             ),
         )
-    except (DataContractError, FileNotFoundError, PermissionError) as exc:
+    except (DataContractError, OSError, json.JSONDecodeError) as exc:
         print(f"preparation stopped without overriding source data: {exc}", file=sys.stderr)
         return 2
     print(json.dumps({"status": "prepared", "sha256": hashes}, sort_keys=True))

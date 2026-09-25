@@ -226,8 +226,11 @@ def load_verified_open_textile(manifest_path: Path, pin_path: Path, raw_dir: Pat
             raise DataContractError(
                 f"reflectance outside audited fractional [0,1] scale in {piece_id}; inspect source"
             )
-        bounds = tuple(int(coordinate_by_id[piece_id][key])
-                       for key in ("y_start", "y_end", "x_start", "x_end"))
+        try:
+            bounds = tuple(int(coordinate_by_id[piece_id][key])
+                           for key in ("y_start", "y_end", "x_start", "x_end"))
+        except ValueError as exc:
+            raise DataContractError(f"non-integer SWIR ROI for {piece_id}") from exc
         if min(bounds) < 0 or bounds[0] >= bounds[1] or bounds[2] >= bounds[3]:
             raise DataContractError(f"invalid SWIR ROI for {piece_id}")
         rgb = tuple(_finite(rgb_by_id[piece_id][key], f"{piece_id} RGB mean")

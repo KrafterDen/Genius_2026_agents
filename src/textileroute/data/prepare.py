@@ -22,28 +22,28 @@ def _hash_bytes(value: bytes) -> str:
 
 
 def _write_once(path: Path, content: bytes) -> str:
-    """Create atomically; refuse to replace changed derived data silently."""
+    """Publish complete bytes once; never overwrite a concurrently created file."""
     path.parent.mkdir(parents=True, exist_ok=True)
     expected_hash = _hash_bytes(content)
-    if path.exists():
-        if not path.is_file() or _hash_bytes(path.read_bytes()) != expected_hash:
+    if path.exists() or path.is_symlink():
+        if path.is_symlink() or not path.is_file() or _hash_bytes(path.read_bytes()) != expected_hash:
             raise DataContractError(f"existing derived file differs; keep it for audit: {path}")
         return expected_hash
-    with tempfile.NamedTemporaryFile(dir=path.parent, prefix=f".{path.name}.",
-                                     suffix=".tmp", delete=False) as handle:
-        temporary = Path(handle.name)
-        handle.write(content)
-        handle.flush()
-        os.fsync(handle.fileno())
+    temporary: Path | None = None
     try:
-        if path.exists():
-            if _hash_bytes(path.read_bytes()) != expected_hash:
+        with tempfile.NamedTemporaryFile(dir=path.parent, prefix=f".{path.name}.",
+                                         suffix=".tmp", delete=False) as handle:
+            temporary = Path(handle.name)
+            handle.write(content)
+            handle.flush()
+            os.fsync(handle.fileno())
+        try:
+            os.link(temporary, path)
+        except FileExistsError:
+            if path.is_symlink() or not path.is_file() or _hash_bytes(path.read_bytes()) != expected_hash:
                 raise DataContractError(f"derived file appeared with different content: {path}")
-            temporary.unlink()
-        else:
-            os.replace(temporary, path)
     finally:
-        if temporary.exists():
+        if temporary is not None and temporary.exists():
             temporary.unlink()
     return expected_hash
 
@@ -56,11 +56,17 @@ def prepare_open_textile(
     processed_dir: Path,
     split_output_path: Path,
     protocol_path: Path,
-    implementation_paths: tuple[Path, ...],
+    repository_root: Path,
+    implementation_paths: tuple[str, ...],
 ) -> dict[str, str]:
     """Hash-check inputs and write source-valued JSON; never train a model."""
     data = load_verified_open_textile(manifest_path, pin_path, raw_dir)
     split = load_frozen_group_split(split_plan_path, data)
+    if len(implementation_paths) != len(set(implementation_paths)) or any(
+        Path(relative_path).is_absolute() or ".." in Path(relative_path).parts
+        for relative_path in implementation_paths
+    ):
+        raise DataContractError("implementation source paths must be unique and repository-relative")
     protocol_hash = hashlib.sha256(protocol_path.read_bytes()).hexdigest()
     if protocol_hash != "65ed47e79118e45a8d46453f3b5cb53993558e2b8f8157ddc597e3b73cc8dfd7":
         raise DataContractError("B04 frozen protocol hash changed; amend before preparation")
@@ -116,8 +122,8 @@ def prepare_open_textile(
         "source_manifest_sha256": hashlib.sha256(manifest_path.read_bytes()).hexdigest(),
         "tracked_source_pin_sha256": hashlib.sha256(pin_path.read_bytes()).hexdigest(),
         "implementation_sha256": {
-            path.name: hashlib.sha256(path.read_bytes()).hexdigest()
-            for path in implementation_paths
+            relative_path: hashlib.sha256((repository_root / relative_path).read_bytes()).hexdigest()
+            for relative_path in implementation_paths
         },
         "derived_sha256": hashes,
         "physical_piece_count": len(data.pieces),

@@ -15,7 +15,8 @@
   "actual_models": [
     {"surface":"desktop root","requested":"gpt-6-sol/high","observed":"unknown; not exposed"},
     {"surface":"native read-only independent challenger","requested":"gpt-6-luna/xhigh","observed":"spawn and findings observed; runtime identity not exposed"},
-    {"surface":"native read-only recovery evidence auditor","requested":"gpt-6-luna/xhigh","observed":"spawn and findings observed; runtime identity not exposed"}
+    {"surface":"native read-only recovery evidence auditor","requested":"gpt-6-luna/xhigh","observed":"spawn and findings observed; runtime identity not exposed"},
+    {"surface":"native read-only static code reviewer","requested":"gpt-6-sol/medium","observed":"spawn and findings observed; runtime identity not exposed"}
   ],
   "blockers": ["Current user/root AGENTS.md prohibits B05 tests and real-data smoke; four acceptance gates cannot be marked passed."],
   "recovery_continuations": [
@@ -26,6 +27,14 @@
       "tests_or_smoke_run": false,
       "model_fit_or_final_set_access": false,
       "evidence_path": ".agent/recovery_2026-09-26.md"
+    },
+    {
+      "local_date": "2026-09-26",
+      "pre_run_revision": "a370891",
+      "result": "static reviewer findings integrated: no-overwrite derived publication, relative implementation-hash keys and explicit group-integration caveat; acceptance gates unchanged",
+      "tests_or_smoke_run": false,
+      "model_fit_or_final_set_access": false,
+      "evidence_path": ".agent/block_reports/B05.md"
     }
   ],
   "next_action": "cat STATUS.json NEXT.md .agent/execplans/B05.md TextileRoute_Codex_Prompt_Pack/prompts/05_DATA_PIPELINE.md"
