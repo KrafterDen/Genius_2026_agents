@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-09-25",
+  "novelty_status": "no_new_algorithmic_gap_verified",
+  "all_candidates_provisional_until_B03": true,
+  "scientific_execution_status": "not_started",
+  "candidates": [
+    {
+      "id": "H02-1",
+      "role": "primary_if_data_sufficient",
+      "kind": "domain_evaluation_not_new_formal_method",
+      "question": "On independent physical textile groups with auditable composition labels, how do classical NIR composition estimation, direct proxy-eligibility classification and an existing binary precision/review policy compare on observed false acceptance versus automatic coverage for one dated composition-only profile?",
+      "exact_added_component": "A transparent, source-scoped textile composition-proxy target and grouped risk/coverage evaluation with explicit REVIEW for unknown labels or unobserved whole-item conditions; no novel estimator or guarantee asserted.",
+      "closest_existing_work": ["S50", "S41", "S42", "S43", "S39", "S40"],
+      "mandatory_comparators": ["simple classical NIR PLS score plus fixed threshold", "direct binary eligibility classifier with an ordinary reject threshold", "existing MAPIE/LTT-style precision controller only if independent calibration is feasible", "all-review reference for zero coverage"],
+      "falsification_condition": "Abandon claimed added value if no independent groups lie clearly on both sides and near the profile threshold, if label ambiguity changes the target, if the simple PLS/threshold comparator matches or dominates the policy at the same information and review budget, or if uncertainty intervals are too wide for a useful conclusion.",
+      "data_prerequisite": "B03 verifies file license, physical group IDs and dependence; enough disjoint eligible/ineligible and near-boundary specimens after train/selection/calibration/evaluation separation; composition metadata with uncertainty represented rather than silent zeros.",
+      "maximum_initial_pilot_budget": "One audited small metadata table and mean-spectrum subset, one chosen profile, up to three low-compute model families, at most two preregistered review rules; development data only. This is a plan, not an authorized test execution.",
+      "claim_if_supported": "Measured proxy-label risk/coverage on the audited sample population, with confidence limits and a no-guarantee caveat.",
+      "prohibited_claims": ["new NIR sorting workflow", "new selective-risk theorem", "true industrial acceptance", "whole-garment purity", "avoided emissions"]
+    },
+    {
+      "id": "H02-2",
+      "role": "fallback_if_profile_target_sparse",
+      "kind": "reproduction_and_dataset_limitation_study",
+      "question": "Can a grouped classical NIR baseline reproduce a source-scoped composition or blend-identification task on an accessible textile dataset, and where do label provenance, instrument and specimen dependence limit its interpretation?",
+      "exact_added_component": "Reproducible dataset and evaluation audit across the best accessible source, with a preregistered comparison to its published/simple PLS result; no algorithmic novelty asserted.",
+      "closest_existing_work": ["S50", "S41", "S42", "S37", "S51"],
+      "mandatory_comparators": ["published source-specific PLS or classical baseline", "majority or simple spectral rule where meaningful"],
+      "falsification_condition": "Report only an audit if no suitable labeled independent groups or lawful data access exist; do not present a routine reproduction as a new sorter or a process improvement.",
+      "data_prerequisite": "B03 compares OpenTextile, NIST NIR-SORT 2.0 and any actually released HyperTex files for license, labels, group IDs, size and accessible spectral format; chemical-reference status is separately recorded.",
+      "maximum_initial_pilot_budget": "One source and one classical baseline on audited mean spectra, bounded to the local machine; no 161.5 GB HyperTex transfer or full HSI matrix by default. This is a plan, not an authorized test execution.",
+      "claim_if_supported": "A reproduced or failed published proxy-label result with explicit differences in data and protocol.",
+      "prohibited_claims": ["novel algorithm", "chemical truth from supplier labels", "general post-consumer deployment", "environmental savings"]
+    }
+  ],
+  "pilot_execution_note": "No tests, experiments, toy examples or model fits were created or run in B02 under the current testing preference."
+}

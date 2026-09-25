@@ -2,9 +2,17 @@
   "schema_version": 1,
   "name": "TextileRoute",
   "data_candidate_doi": "10.5281/zenodo.18269172",
+  "data_choice_frozen": false,
+  "data_alternatives_to_audit": [
+    {"name": "OpenTextile-NIR", "source_id": "S50", "status": "article_audited_files_license_pending"},
+    {"name": "NIST NIR-SORT 2.0", "source_id": "S37", "status": "official_page_opened_files_license_pending"},
+    {"name": "HyperTex", "source_id": "S51", "status": "files_embargoed_until_2026-09-30"}
+  ],
   "data_files_verified": false,
   "dataset_license_verified": false,
-  "target": "conditional_sample_level_fibre_composition_proxy_review",
+  "target": "conditional_grouped_fibre_composition_proxy_review_evaluation",
+  "contribution_kind": "provisional_domain_evaluation_not_new_algorithm",
+  "formal_risk_guarantee_claimed": false,
   "target_basis": "supplier composition metadata; not an independent chemical assay",
   "candidate_profiles": ["JRC2024_MECH_COTTON80", "JRC2024_CHEM_POLYESTER95"],
   "sensitivity_profile": "INFINITED_COTTON88_PREFERENCE",
