@@ -1,0 +1,2 @@
+# Live ExecPlans
+Each `.agent/execplans/Bxx.md` must be self-contained: purpose, present state, source/evidence pointers, assumptions, milestone checklist, exact commands, acceptance checks, experiment/data scope, resource budget, risks, rollback, decisions and next actions. Update it during execution. A new context should not require the old chat. Distinguish planned, actually run and verified steps. Keep raw logs outside the plan and link them. Never mark features/tests as passing without evidence. Preserve negative findings and deviations from the original proposal.

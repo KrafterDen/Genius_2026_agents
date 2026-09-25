@@ -1,0 +1,91 @@
+{
+  "checked_on": "2026-09-25",
+  "category": "AI",
+  "national_season": "2027",
+  "national_category_rules_final_for_season": false,
+  "ukraine": {
+    "sources": [
+      "S01",
+      "S02",
+      "S03"
+    ],
+    "status": "published_working_baseline_recheck",
+    "report_languages_published": [
+      "uk",
+      "en"
+    ],
+    "requested_report_language": "uk",
+    "formats": [
+      "docx",
+      "pdf"
+    ],
+    "pdf_max_bytes_conservative": 5000000,
+    "max_body_pages": 15,
+    "include_appendices_in_body": true,
+    "exclude_title_and_references_from_body": true,
+    "font_candidates": [
+      "Arial",
+      "Calibri"
+    ],
+    "font_sizes_pt": [
+      11,
+      12
+    ],
+    "margin_cm": 2.5,
+    "video_max_seconds": 300,
+    "video_language": "en",
+    "video_title_pattern": "GENIUS AI Ukraine_YEAR_TITLE",
+    "team_max": 2,
+    "final_format": "unresolved_for_2027",
+    "registration_start": "2026-10-14",
+    "registration_end": "2026-11-14",
+    "affiliated_end": "2026-11-22",
+    "eligibility_status": "requires_actual_school_evidence"
+  },
+  "international": {
+    "sources": [
+      "S04",
+      "S05"
+    ],
+    "report_language": "en",
+    "report_required_format": "pdf",
+    "max_total_pages": 20,
+    "abstract_max_words": 250,
+    "font_candidates": [
+      "Arial",
+      "Calibri",
+      "Helvetica"
+    ],
+    "font_sizes_pt": [
+      10,
+      11
+    ],
+    "margin_min_cm": 2,
+    "video_max_seconds": 180,
+    "video_language": "en",
+    "narration_required": true,
+    "presentation_max_seconds": 300,
+    "qa_minutes": [
+      4,
+      5
+    ],
+    "poster_allowed": false,
+    "team_max": 2,
+    "student_roles_required": true,
+    "external_contributions_required": true
+  },
+  "not_pre_authorized": [
+    "purchase",
+    "contact_organizer",
+    "public_upload",
+    "submit",
+    "sign",
+    "impersonate_student"
+  ],
+  "recheck_blocks": [
+    "01",
+    "16",
+    "17",
+    "19"
+  ]
+}

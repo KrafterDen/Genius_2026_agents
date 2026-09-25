@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "id",
+    "role",
+    "model",
+    "effort",
+    "objective",
+    "inputs",
+    "write_scope",
+    "output_contract",
+    "acceptance",
+    "budget",
+    "stop_conditions"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string"
+    },
+    "model": {
+      "type": "string"
+    },
+    "effort": {
+      "type": "string"
+    },
+    "objective": {
+      "type": "string"
+    },
+    "inputs": {
+      "type": "array"
+    },
+    "write_scope": {
+      "type": "array"
+    },
+    "output_contract": {
+      "type": "string"
+    },
+    "acceptance": {
+      "type": "array"
+    },
+    "budget": {
+      "type": "object"
+    },
+    "stop_conditions": {
+      "type": "array"
+    }
+  }
+}

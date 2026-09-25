@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "name": "TextileRoute",
+  "data_candidate_doi": "10.5281/zenodo.18269172",
+  "data_files_verified": false,
+  "dataset_license_verified": false,
+  "target": "candidate_specification_aware_textile_routing",
+  "scope_locked": false,
+  "primary_language": "uk",
+  "secondary_language": "en",
+  "allow_synthetic_for_unit_tests": true,
+  "allow_synthetic_as_real_validation": false
+}

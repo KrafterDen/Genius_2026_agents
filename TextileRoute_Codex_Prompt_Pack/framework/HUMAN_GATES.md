@@ -1,0 +1,16 @@
+# Human participation, authority and safety
+
+Automation can do implementation, source gathering, experiment orchestration, formatting and draft preparation. It must not fabricate a student's work or personal participation. The international AI category requires meaningful student work, and the paper template explicitly asks for student roles and external contributions. This is not a claim that all AI assistance is banned. Verify the current applicable policy and describe assistance accurately.
+
+Maintain two distinct logs: actual agent actions (`contribution/AI_USE_LOG.md`) and actual student actions (`contribution/STUDENT_WORK_LOG.md`). Do not prepopulate the latter with completed work. Never write "I developed / collected / proved" in a submission merely because an AI agent did it. A polished draft must remain labelled DRAFT until its authorship statements are true.
+
+## H1 — identity, eligibility and permissions
+Collect, in one batch only when needed, the student's actual name in required languages, age/school/enrollment, teammate/mentor if real, registration route, and any actual institutional/guardian consent. The user lives abroad; Ukrainian school eligibility must be verified, not inferred from residence. Store private identity in a gitignored file and use placeholders in public artifacts until authorized. Draft organizer questions but do not send them or register twice. No purchases, accounts, public repositories, uploads or external communication without explicit permission.
+
+## H2 — genuine student-owned scientific work
+Prepare a short learning workbook and a runnable experiment the participant can genuinely own: identify a failure, justify one design choice, alter a bounded setting or component, run the comparison, interpret the result and explain limitations. The amount must be substantively meaningful, not ceremonial clicking. Offer bounded alternatives instead of asking the student to manage every technical detail. Record what the student actually did and understands; do not script false experiences. A contribution or eligibility dispute remains unresolved until the organizer/student provides evidence.
+
+## H3 — voice, presentation and release
+Prepare the English narration script, timed slides, screen recording, subtitles, rehearsal questions and a local render. Actual student presentation/defense, any required declarations/signatures and final publication/submission approval are human actions. The reviewed international rule requires English narration but does not explicitly say it must be the student's natural voice. Default to preparing an own-voice recording plan; do not misrepresent that preference as a verified organizer requirement. Transparent, licensed synthetic narration may be considered only with explicit user authorization and a check of current applicable rules, never impersonating the student or claiming the student recorded it. Do not clone a voice. A scratch narration used for timing is labelled as such. Do not require face video unless the rules actually do.
+
+Maintain `HUMAN_ACTIONS.md` with three sections: needed now, needed before final release, optional. Continue independent work while later actions are pending. The default is local-only preparation with `submission_ready=false`, not an unnecessary halt to all engineering.

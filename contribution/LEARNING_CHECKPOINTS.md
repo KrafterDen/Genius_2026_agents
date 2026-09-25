@@ -1,0 +1,2 @@
+# Prepare, do not pre-complete
+Prepare a beginner-friendly workbook connecting NIR measurements, mixtures, recycler criteria, baselines, grouped data, selective risk and limitations. Later identify one substantive component/experiment for the student to own. Record authentic answers and work, not model-generated answers disguised as theirs. Completion must be verified before personal contribution claims enter final reports.

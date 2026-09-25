@@ -1,0 +1,13 @@
+{
+  "block_id": "07",
+  "status": "not_started",
+  "started_at": null,
+  "ended_at": null,
+  "elapsed_minutes": null,
+  "under_target_reason": null,
+  "gates": [],
+  "evidence": [],
+  "actual_models": [],
+  "blockers": [],
+  "next_action": "Execute TextileRoute_Codex_Prompt_Pack/prompts/07_*.md after dependencies pass."
+}

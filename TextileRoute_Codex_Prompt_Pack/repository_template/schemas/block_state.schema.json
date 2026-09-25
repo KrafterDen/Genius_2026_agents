@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Work block state",
+  "type": "object",
+  "required": [
+    "block_id",
+    "status",
+    "started_at",
+    "ended_at",
+    "elapsed_minutes",
+    "gates",
+    "evidence",
+    "next_action"
+  ],
+  "properties": {
+    "block_id": {
+      "type": "string",
+      "pattern": "^[0-9]{2}$"
+    },
+    "status": {
+      "enum": [
+        "not_started",
+        "in_progress",
+        "passed",
+        "blocked",
+        "needs_revision"
+      ]
+    },
+    "started_at": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "ended_at": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "elapsed_minutes": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "under_target_reason": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "gates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "passed",
+          "evidence_path"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "passed": {
+            "type": "boolean"
+          },
+          "evidence_path": {
+            "type": "string"
+          },
+          "command": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "actual_models": {
+      "type": "array"
+    },
+    "blockers": {
+      "type": "array"
+    },
+    "next_action": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

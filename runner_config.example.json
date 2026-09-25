@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "validated": false,
+  "validated_for_codex_version": null,
+  "validation_evidence_paths": [],
+  "web_search_verified": false,
+  "native_subagents_verified": false,
+  "command_template": [
+    "codex",
+    "exec",
+    "-m",
+    "gpt-6-sol",
+    "-c",
+    "model_reasoning_effort=\"high\"",
+    "--sandbox",
+    "workspace-write",
+    "--output-last-message",
+    "{last_message}",
+    "-"
+  ],
+  "note": "EXAMPLE ONLY. Bootstrap must inspect local help, validate each argument, actual model and web capability, smoke-test a harmless invocation, then save the real config to .agent/runtime/runner_config.json. Preserve existing permissions. Never activate a permission bypass."
+}

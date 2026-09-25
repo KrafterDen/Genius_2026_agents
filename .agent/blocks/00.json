@@ -1,0 +1,108 @@
+{
+  "block_id": "00",
+  "status": "passed",
+  "started_at": "2026-09-25T16:15:53Z",
+  "ended_at": "2026-09-25T16:29:23Z",
+  "elapsed_minutes": 13.508,
+  "under_target_reason": "B00 controls, current tooling checks, CLI fallback, failure rehearsals and privacy audit completed quickly using the supplied templates and standard-library scripts; no data acquisition or long scientific experiment was in B00 scope. No idle time added.",
+  "gates": [
+    {
+      "name": "existing files and pack preserved; privacy rules inspected",
+      "passed": true,
+      "evidence_path": "docs/validation/pack_integrity.txt",
+      "command": ".venv/bin/python TextileRoute_Codex_Prompt_Pack/tools/validate_pack.py"
+    },
+    {
+      "name": "real package smoke command and control fault tests passed",
+      "passed": true,
+      "evidence_path": "docs/validation/tests.txt",
+      "command": "PYTHONPATH=src:. .venv/bin/python -m unittest discover -s tests -v"
+    },
+    {
+      "name": "repository validator passed",
+      "passed": true,
+      "evidence_path": "docs/validation/validator.txt",
+      "command": ".venv/bin/python scripts/validate_repository.py --repo . --require-block 00"
+    },
+    {
+      "name": "actual hardware network and model availability recorded",
+      "passed": true,
+      "evidence_path": "docs/codex_capabilities.md",
+      "command": "codex exec harmless model and web checks; see docs/validation/cli_checks.txt"
+    },
+    {
+      "name": "resumable state and human release gates visible",
+      "passed": true,
+      "evidence_path": "NEXT.md",
+      "command": null
+    }
+  ],
+  "evidence": [
+    "docs/validation/smoke.txt",
+    "docs/validation/tests.txt",
+    "docs/validation/validator.txt",
+    "docs/validation/cli_checks.txt",
+    "docs/validation/privacy_audit.txt",
+    "docs/validation/pack_integrity.txt",
+    "docs/environment_audit.md",
+    "docs/codex_capabilities.md",
+    ".agent/block_reports/B00.md",
+    "HUMAN_ACTIONS.md",
+    "NEXT.md"
+  ],
+  "actual_models": [
+    {
+      "surface": "desktop root",
+      "requested": "gpt-6-sol/high",
+      "observed": "unknown; not exposed"
+    },
+    {
+      "surface": "desktop child review",
+      "requested": "gpt-6-sol/medium",
+      "observed": "spawn accepted; runtime metadata not exposed"
+    },
+    {
+      "surface": "desktop child audit",
+      "requested": "gpt-6-luna/xhigh",
+      "observed": "spawn accepted; runtime metadata not exposed"
+    },
+    {
+      "surface": "CLI",
+      "requested": "gpt-6-sol/high",
+      "observed": "rejected HTTP 400"
+    },
+    {
+      "surface": "CLI fallback",
+      "requested": "gpt-5.6-sol/high, gpt-5.6-sol/medium, gpt-5.6-luna/xhigh",
+      "observed": "successful harmless invocations"
+    }
+  ],
+  "blockers": [],
+  "next_action": "cat STATUS.json .agent/execplans/B01.md TextileRoute_Codex_Prompt_Pack/prompts/01_RULES_AND_PROBLEM.md",
+  "source_ids": [
+    "S20",
+    "S21",
+    "S22",
+    "S23",
+    "S24"
+  ],
+  "changed_files": [
+    "AGENTS.md",
+    "PROJECT.md",
+    "PLANS.md",
+    "STATUS.json",
+    "NEXT.md",
+    "HUMAN_ACTIONS.md",
+    ".agent/",
+    "docs/",
+    "scripts/",
+    "src/",
+    "tests/",
+    "research/",
+    "configs/",
+    ".codex/",
+    ".gitignore",
+    "data/AGENTS.md",
+    "results/AGENTS.md"
+  ]
+}

@@ -1,0 +1,11 @@
+# Project-local Codex 0.149.0 CLI settings; observed ChatGPT-account fallback.
+# Desktop task model availability differs from this CLI build/account path.
+model = "gpt-5.6-sol"
+model_reasoning_effort = "high"
+sandbox_mode = "workspace-write"
+
+[agents]
+enabled = true
+max_concurrent_threads_per_session = 3
+default_subagent_model = "gpt-5.6-luna"
+default_subagent_reasoning_effort = "xhigh"

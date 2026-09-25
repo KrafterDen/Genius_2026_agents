@@ -1,0 +1,5 @@
+PASS: optional runner configuration validated against its contract
+PASS: B00 passed state accepted by optional runner
+Codex version: codex-cli 0.149.0
+Native CLI subagent spawn verified: False
+Argument count: 14

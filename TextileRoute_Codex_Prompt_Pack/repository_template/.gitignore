@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.env
+.env.*
+!.env.example
+private/
+data/raw/
+data/processed/
+.agent/runtime/
+.agent/locks/
+*.log
+*.tmp
+.DS_Store
+# Add model/checkpoint rules deliberately after deciding which shareable artifacts to retain.

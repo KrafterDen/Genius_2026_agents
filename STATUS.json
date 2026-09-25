@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "project": "TextileRoute",
+  "active_block": "01",
+  "project_stage": "rules_and_problem_pending",
+  "submission_ready": false,
+  "student_contribution_verified": false,
+  "last_checkpoint": "2026-09-25T16:29:23Z",
+  "blocked_on": [],
+  "next_action": "cat STATUS.json .agent/execplans/B01.md TextileRoute_Codex_Prompt_Pack/prompts/01_RULES_AND_PROBLEM.md"
+}

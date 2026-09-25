@@ -1,0 +1,161 @@
+{
+  "schema_version": 1,
+  "tasks": [
+    {
+      "id": "workspace_and_permissions",
+      "status": "passed",
+      "passed": true,
+      "evidence": [
+        "docs/validation/privacy_audit.txt"
+      ],
+      "write_scope": []
+    },
+    {
+      "id": "environment_audit",
+      "status": "passed",
+      "passed": true,
+      "evidence": [
+        "docs/environment_audit.md"
+      ],
+      "write_scope": []
+    },
+    {
+      "id": "official_codex_research",
+      "status": "passed",
+      "passed": true,
+      "evidence": [
+        "research/challenges/B00_codex_workflow.md"
+      ],
+      "write_scope": []
+    },
+    {
+      "id": "repository_skeleton",
+      "status": "passed",
+      "passed": true,
+      "evidence": [
+        "AGENTS.md"
+      ],
+      "write_scope": []
+    },
+    {
+      "id": "source_register",
+      "status": "passed",
+      "passed": true,
+      "evidence": [
+        "research/sources.jsonl"
+      ],
+      "write_scope": []
+    },
+    {
+      "id": "native_roles",
+      "status": "passed",
+      "passed": true,
+      "evidence": [
+        "docs/codex_capabilities.md"
+      ],
+      "write_scope": []
+    },
+    {
+      "id": "runner_validation",
+      "status": "passed",
+      "passed": true,
+      "evidence": [
+        "docs/validation/cli_checks.txt"
+      ],
+      "write_scope": []
+    },
+    {
+      "id": "smoke_test",
+      "status": "passed",
+      "passed": true,
+      "evidence": [
+        "docs/validation/smoke.txt"
+      ],
+      "write_scope": []
+    },
+    {
+      "id": "state_validator",
+      "status": "passed",
+      "passed": true,
+      "evidence": [
+        "docs/validation/validator.txt"
+      ],
+      "write_scope": []
+    },
+    {
+      "id": "failure_rehearsal",
+      "status": "passed",
+      "passed": true,
+      "evidence": [
+        "docs/validation/tests.txt"
+      ],
+      "write_scope": []
+    },
+    {
+      "id": "privacy_audit",
+      "status": "passed",
+      "passed": true,
+      "evidence": [
+        "docs/validation/privacy_audit.txt"
+      ],
+      "write_scope": []
+    },
+    {
+      "id": "data_license",
+      "status": "not_started",
+      "passed": false,
+      "evidence": [],
+      "write_scope": []
+    },
+    {
+      "id": "data_grouping",
+      "status": "not_started",
+      "passed": false,
+      "evidence": [],
+      "write_scope": []
+    },
+    {
+      "id": "recycler_profile",
+      "status": "not_started",
+      "passed": false,
+      "evidence": [],
+      "write_scope": []
+    },
+    {
+      "id": "scientific_freeze",
+      "status": "not_started",
+      "passed": false,
+      "evidence": [],
+      "write_scope": []
+    },
+    {
+      "id": "baselines",
+      "status": "not_started",
+      "passed": false,
+      "evidence": [],
+      "write_scope": []
+    },
+    {
+      "id": "risk_evaluation",
+      "status": "not_started",
+      "passed": false,
+      "evidence": [],
+      "write_scope": []
+    },
+    {
+      "id": "student_contribution",
+      "status": "not_started",
+      "passed": false,
+      "evidence": [],
+      "write_scope": []
+    },
+    {
+      "id": "submission_release",
+      "status": "not_started",
+      "passed": false,
+      "evidence": [],
+      "write_scope": []
+    }
+  ],
+  "rule": "A completed task requires actual evidence and verification; initial flags are false."
+}

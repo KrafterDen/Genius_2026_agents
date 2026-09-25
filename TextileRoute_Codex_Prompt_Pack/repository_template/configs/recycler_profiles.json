@@ -1,0 +1,5 @@
+{
+  "schema_version": 1,
+  "profiles": [],
+  "note": "Populate only from dated primary evidence; separate historical/scenario/current, fibre eligibility and unobserved conditions. No universal 95% criterion."
+}

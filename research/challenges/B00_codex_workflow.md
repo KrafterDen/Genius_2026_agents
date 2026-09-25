@@ -1,0 +1,5 @@
+# Independent workflow challenge, B00
+
+Read-only Sol Medium reviewer consulted current official OpenAI documentation. Findings: native local subagents and project `.codex/agents/*.toml` are sufficient; project-scoped config supports explicit models and efforts. Use ordinary repo state files for cross-task recovery; Goals are thread-scoped and were not requested. Worktrees are available if a future task needs isolated writes, but B00's one-writer bootstrap did not need one. Noninteractive `codex exec` is supported, with read-only default and explicit workspace-write for editing.
+
+Decision: **keep** native roles and simple standard-library state validation; **defer** separate worktrees until concurrent writers would make them useful. Sources: [Subagents](https://learn.chatgpt.com/docs/agent-configuration/subagents), [Config basics](https://learn.chatgpt.com/docs/config-file/config-basic), [Non-interactive mode](https://learn.chatgpt.com/docs/non-interactive-mode), [Git worktrees](https://learn.chatgpt.com/docs/environments/git-worktrees). Local CLI availability differed from desktop metadata and was tested separately; see `docs/codex_capabilities.md`.

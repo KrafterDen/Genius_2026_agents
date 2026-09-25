@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "paid_services_allowed": false,
+  "public_upload_allowed": false,
+  "max_live_subagents": 3,
+  "max_gpu_jobs": 1,
+  "max_heavy_cpu_jobs": 1,
+  "soft_child_dispatches_per_block": 6,
+  "soft_astra_dispatches_per_audit_block": 1,
+  "max_initial_download_gib": 10,
+  "max_matrix_trials_before_review": 40,
+  "cpu_ram_soft_fraction": 0.65,
+  "gpu_memory_soft_fraction": 0.8,
+  "actual_hardware": {
+    "observed_on": "2026-09-25",
+    "os": "Arch Linux x86_64",
+    "python": "3.14.7",
+    "ram_gib_total_approx": 15,
+    "disk_gib_available_approx": 103,
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpu_vram_mib": 6144,
+    "nvidia_smi_available": true,
+    "cuda_driver_reported": "13.3",
+    "gpu_experiment_run": false
+  },
+  "user_token_or_credit_cap": null,
+  "unknown_cost_policy": "record unknown; never purchase or bypass rate limits",
+  "session_productive_target_minutes": 180,
+  "session_planning_upper_minutes": 240
+}

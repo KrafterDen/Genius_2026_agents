@@ -1,0 +1,547 @@
+{
+  "schema_version": 1,
+  "note": "20 substantive blocks. Planning allocations are not guaranteed duration. Evidence gates, not timers, determine honest completion.",
+  "blocks": [
+    {
+      "id": "00",
+      "title": "Initialize the repository and a recoverable autonomous workflow",
+      "prompt": "prompts/00_BOOTSTRAP.md",
+      "planning_minutes": [
+        180,
+        240
+      ],
+      "dependencies": [],
+      "expected_artifacts": [
+        "AGENTS.md",
+        "PROJECT.md",
+        "PLANS.md",
+        "STATUS.json",
+        "NEXT.md",
+        "HUMAN_ACTIONS.md",
+        "docs/environment_audit.md",
+        "docs/codex_capabilities.md",
+        "scripts/validate_repository.py",
+        ".agent/tasks.json",
+        ".agent/blocks/00.json"
+      ],
+      "acceptance_gates": [
+        "Existing user files and instructions are preserved; no global or public changes occurred.",
+        "A real smoke test and repository validator run successfully and logs are saved.",
+        "Available versus unavailable models, actual hardware and network state are recorded accurately.",
+        "States are resumable, incomplete experiments are not claimed, and human release gates are visible."
+      ]
+    },
+    {
+      "id": "01",
+      "title": "Verify the industrial problem and current competition requirements",
+      "prompt": "prompts/01_RULES_AND_PROBLEM.md",
+      "planning_minutes": [
+        180,
+        240
+      ],
+      "dependencies": [
+        "00"
+      ],
+      "expected_artifacts": [
+        "research/problem_evidence.md",
+        "research/claims.csv",
+        "configs/recycler_profiles.json",
+        "docs/requirements_current.json",
+        "docs/requirements_conflicts.md",
+        "submission/deliverables_plan.json",
+        "research/challenges/01_problem.md"
+      ],
+      "acceptance_gates": [
+        "Every material rule and industrial claim has an opened primary source and exact scope.",
+        "Historical recycler thresholds are not described as universal/current rules.",
+        "National and international deliverables are separated, including unresolved human eligibility.",
+        "A narrower measurable problem survives the challenger or is explicitly marked conditional."
+      ]
+    },
+    {
+      "id": "02",
+      "title": "Find the closest prior art and narrow the contribution",
+      "prompt": "prompts/02_PRIOR_ART_CHALLENGE.md",
+      "planning_minutes": [
+        180,
+        240
+      ],
+      "dependencies": [
+        "01"
+      ],
+      "expected_artifacts": [
+        "research/prior_art_matrix.csv",
+        "research/search_log.jsonl",
+        "research/novelty_audit.md",
+        "research/candidate_hypotheses.json",
+        "research/challenges/02_alternatives.md",
+        "research/decisions/ADR-002-contribution.md"
+      ],
+      "acceptance_gates": [
+        "Closest existing selective/reject/risk-control methods are represented, not omitted.",
+        "All cited papers are actually verified; missing full texts are marked.",
+        "Each candidate has a falsification test and a data prerequisite.",
+        "A concrete provisional choice or honest no-gap finding is recorded."
+      ]
+    },
+    {
+      "id": "03",
+      "title": "Retrieve small data first and decide whether the target is identifiable",
+      "prompt": "prompts/03_DATA_AUDIT.md",
+      "planning_minutes": [
+        180,
+        240
+      ],
+      "dependencies": [
+        "02"
+      ],
+      "expected_artifacts": [
+        "data/manifests/dataset_manifest.json",
+        "protocol/data_audit.json",
+        "protocol/data_audit.md",
+        "docs/dataset_card.md",
+        "protocol/grouping.json",
+        "protocol/target_feasibility.csv",
+        "research/challenges/03_data.md",
+        "research/decisions/ADR-003-data-gate.md"
+      ],
+      "acceptance_gates": [
+        "Real file retrieval and license are verified or the block is explicitly blocked.",
+        "Physical sample/garment counts replace misleading pixel counts.",
+        "Threshold labels and independent positive/negative cases exist for the chosen target.",
+        "No ambiguous compositions are silently treated as exact negatives or zero impurity."
+      ]
+    },
+    {
+      "id": "04",
+      "title": "Preregister the experiment and validate what can be claimed",
+      "prompt": "prompts/04_PROTOCOL_AND_RISK.md",
+      "planning_minutes": [
+        180,
+        240
+      ],
+      "dependencies": [
+        "03"
+      ],
+      "expected_artifacts": [
+        "protocol/preregistered_protocol.md",
+        "protocol/metrics.json",
+        "protocol/split_plan.json",
+        "protocol/risk_analysis.md",
+        "protocol/test_access_log.jsonl",
+        "research/challenges/04_statistics.md",
+        "tests/test_metric_contracts.py"
+      ],
+      "acceptance_gates": [
+        "Selective risk is not confused with marginal interval coverage or batch purity.",
+        "Independent units, calibration boundaries and no-retuning policy are explicit.",
+        "Risk sample-size calculations are reproducible and impossible guarantees removed.",
+        "Primary/secondary analyses and negative-result handling are specified before final test access."
+      ]
+    },
+    {
+      "id": "05",
+      "title": "Implement audited data ingestion, preprocessing and leakage guards",
+      "prompt": "prompts/05_DATA_PIPELINE.md",
+      "planning_minutes": [
+        180,
+        240
+      ],
+      "dependencies": [
+        "04"
+      ],
+      "expected_artifacts": [
+        "src/textileroute/data/",
+        "src/textileroute/spectra/",
+        "scripts/prepare_data.py",
+        "data/splits/",
+        "tests/test_data_pipeline.py",
+        "tests/test_leakage_guards.py",
+        "docs/data_pipeline.md"
+      ],
+      "acceptance_gates": [
+        "A clean command reconstructs processed data from verified inputs.",
+        "No independent group crosses a split; leakage tests catch deliberate violations.",
+        "Units, missing labels and preprocessing state are checked rather than inferred silently.",
+        "Real smoke execution and memory measurements fit the actual machine."
+      ]
+    },
+    {
+      "id": "06",
+      "title": "Establish strong low-compute baselines and honest learning curves",
+      "prompt": "prompts/06_BASELINES.md",
+      "planning_minutes": [
+        180,
+        240
+      ],
+      "dependencies": [
+        "05"
+      ],
+      "expected_artifacts": [
+        "src/textileroute/models/",
+        "src/textileroute/policies/baselines.py",
+        "configs/baselines.json",
+        "results/development/baselines/",
+        "research/challenges/06_models.md",
+        "docs/baseline_analysis.md"
+      ],
+      "acceptance_gates": [
+        "Direct eligibility plus rejection and a classical spectral baseline are included.",
+        "All reported development metrics reproduce from stored predictions.",
+        "No final-test data was used for selection.",
+        "Trials are bounded and computationally appropriate; failures are preserved."
+      ]
+    },
+    {
+      "id": "07",
+      "title": "Implement uncertainty and selective decisions without false guarantees",
+      "prompt": "prompts/07_UNCERTAINTY.md",
+      "planning_minutes": [
+        180,
+        240
+      ],
+      "dependencies": [
+        "06"
+      ],
+      "expected_artifacts": [
+        "src/textileroute/calibration/",
+        "src/textileroute/policies/selective.py",
+        "tests/test_selective_risk.py",
+        "protocol/guarantee_scope.md",
+        "research/challenges/07_risk_control.md",
+        "docs/uncertainty_reference.md"
+      ],
+      "acceptance_gates": [
+        "Risk numerator/denominator, rejection and undefined cases are correct.",
+        "No marginal-coverage-to-selective-precision leap remains.",
+        "Calibration/test boundaries and small-sample caveats are enforced in code and wording.",
+        "A reference implementation or independently calculated cases validate the metrics."
+      ]
+    },
+    {
+      "id": "08",
+      "title": "Choose one defensible custom contribution using falsification pilots",
+      "prompt": "prompts/08_CONTRIBUTION_PILOT.md",
+      "planning_minutes": [
+        180,
+        240
+      ],
+      "dependencies": [
+        "07"
+      ],
+      "expected_artifacts": [
+        "research/decisions/ADR-008-method.md",
+        "research/challenges/08_exact_gap.md",
+        "protocol/custom_method_spec.md",
+        "results/development/pilot/",
+        "contribution/student_experiment_plan.md",
+        "docs/pilot_findings.md"
+      ],
+      "acceptance_gates": [
+        "One concrete added component is distinguishable from existing baselines.",
+        "The pilot can falsify the proposed advantage and includes the closest comparator.",
+        "Claimed human savings match what was actually simulated/measured.",
+        "The chosen scope and pending genuine student role are explicit."
+      ]
+    },
+    {
+      "id": "09",
+      "title": "Implement the selected method, fair review workflow and ablations",
+      "prompt": "prompts/09_METHOD_AND_ABLATIONS.md",
+      "planning_minutes": [
+        180,
+        240
+      ],
+      "dependencies": [
+        "08"
+      ],
+      "expected_artifacts": [
+        "src/textileroute/policies/custom.py",
+        "configs/ablations.json",
+        "tests/test_custom_policy.py",
+        "tests/test_no_label_leakage.py",
+        "docs/method_implementation.md",
+        "research/challenges/09_implementation.md",
+        "results/development/ablations/"
+      ],
+      "acceptance_gates": [
+        "Contribution-off and strongest applicable reference comparators work.",
+        "Review/data/compute budgets are matched or differences disclosed.",
+        "All decision inputs and label access obey the protocol.",
+        "Independent code review findings are resolved or explicit blockers."
+      ]
+    },
+    {
+      "id": "10",
+      "title": "Freeze the protocol, code and final experiment matrix",
+      "prompt": "prompts/10_FREEZE_AND_RUN_MATRIX.md",
+      "planning_minutes": [
+        180,
+        240
+      ],
+      "dependencies": [
+        "09"
+      ],
+      "expected_artifacts": [
+        "configs/experiments.json",
+        "configs/freeze.json",
+        "scripts/run_experiments.py",
+        "scripts/evaluate_frozen.py",
+        "protocol/final_analysis_plan.md",
+        "research/challenges/10_pretest_audit.md",
+        "docs/freeze_receipt.md"
+      ],
+      "acceptance_gates": [
+        "No final labels influenced model, policy, threshold or presentation of a winner.",
+        "All primary and robustness analyses are specified and bounded.",
+        "Dry run succeeds and fault recovery preserves evidence.",
+        "Freeze manifest binds code/data/splits/configs; critical audit issues are closed."
+      ]
+    },
+    {
+      "id": "11",
+      "title": "Run the frozen evaluation and preserve all outcomes",
+      "prompt": "prompts/11_FINAL_EVALUATION.md",
+      "planning_minutes": [
+        180,
+        240
+      ],
+      "dependencies": [
+        "10"
+      ],
+      "expected_artifacts": [
+        "results/runs/",
+        "results/verified_summary.json",
+        "results/claim_ledger.csv",
+        "results/final/predictions.csv",
+        "results/final/primary_analysis.md",
+        "research/challenges/11_metric_recompute.md",
+        "protocol/test_access_log.jsonl"
+      ],
+      "acceptance_gates": [
+        "Final runs obey the freeze and all attempted outcomes are preserved.",
+        "Metrics reproduce from stored predictions with independent denominators.",
+        "No false guarantee or post-hoc winner selection occurs.",
+        "Ledger states actual positive/negative/inconclusive findings and exact evidence."
+      ]
+    },
+    {
+      "id": "12",
+      "title": "Evaluate preregistered robustness and delimit generalization",
+      "prompt": "prompts/12_ROBUSTNESS.md",
+      "planning_minutes": [
+        180,
+        240
+      ],
+      "dependencies": [
+        "11"
+      ],
+      "expected_artifacts": [
+        "results/robustness/",
+        "docs/failure_gallery.md",
+        "docs/generalization_limits.md",
+        "docs/model_card.md",
+        "research/challenges/12_robustness.md",
+        "results/robustness_summary.json"
+      ],
+      "acceptance_gates": [
+        "Confirmatory and exploratory robustness analyses are clearly separated.",
+        "Synthetic perturbations are not described as a real factory test.",
+        "Unsupported inputs have safe, explicit output behavior.",
+        "Claim scope reflects failed groups, uncertain labels and coverage loss."
+      ]
+    },
+    {
+      "id": "13",
+      "title": "Quantify the measured value and separate it from hypothetical benefits",
+      "prompt": "prompts/13_ENVIRONMENT_AND_COST.md",
+      "planning_minutes": [
+        180,
+        240
+      ],
+      "dependencies": [
+        "12"
+      ],
+      "expected_artifacts": [
+        "docs/environmental_assessment.md",
+        "docs/resource_cost_analysis.md",
+        "results/resources.json",
+        "results/scenarios.json",
+        "research/challenges/13_impact.md",
+        "results/claim_ledger.csv"
+      ],
+      "acceptance_gates": [
+        "Measured technical outcomes and hypothetical environmental effects are distinct.",
+        "No invented mass, emissions, energy, human time or factory validation is used.",
+        "Compute requirements are actually measured where claimed.",
+        "Tradeoffs and real spectrometer/deployment needs are disclosed."
+      ]
+    },
+    {
+      "id": "14",
+      "title": "Build a clear, offline demonstration using the actual trained pipeline",
+      "prompt": "prompts/14_OFFLINE_DEMO.md",
+      "planning_minutes": [
+        180,
+        240
+      ],
+      "dependencies": [
+        "13"
+      ],
+      "expected_artifacts": [
+        "app/",
+        "scripts/launch_demo.py",
+        "tests/test_demo_integration.py",
+        "docs/demo_user_guide.md",
+        "docs/demo_test_evidence.md",
+        "presentation/demo_storyboard.md",
+        "research/challenges/14_demo_stack.md"
+      ],
+      "acceptance_gates": [
+        "Demo uses the actual pipeline and works without network at inference.",
+        "Spectrum/photograph roles and measurement limitations are unmistakable.",
+        "Known, ambiguous, unsupported and failure cases are represented honestly.",
+        "End-to-end testing and ledger consistency are recorded."
+      ]
+    },
+    {
+      "id": "15",
+      "title": "Reproduce the whole project and prepare authentic student understanding",
+      "prompt": "prompts/15_REPRODUCIBILITY_REVIEW.md",
+      "planning_minutes": [
+        180,
+        240
+      ],
+      "dependencies": [
+        "14"
+      ],
+      "expected_artifacts": [
+        "README.md",
+        "docs/reproducibility_report.md",
+        "docs/final_science_audit.md",
+        "contribution/learning_workbook.md",
+        "contribution/defense_questions.md",
+        "contribution/contributions_draft.md",
+        "HUMAN_ACTIONS.md"
+      ],
+      "acceptance_gates": [
+        "A new environment can reproduce the documented smoke and key metric path.",
+        "No claim relies on untracked local state or undisclosed excluded results.",
+        "Student and agent work are truthfully separated; pending student work is not marked done.",
+        "No restricted/private content enters candidate public bundles."
+      ]
+    },
+    {
+      "id": "16",
+      "title": "Write and render the Ukrainian national research report",
+      "prompt": "prompts/16_REPORT_UK.md",
+      "planning_minutes": [
+        180,
+        240
+      ],
+      "dependencies": [
+        "15"
+      ],
+      "expected_artifacts": [
+        "documents/report_uk.md",
+        "documents/references.bib",
+        "scripts/build_reports.py",
+        "submission/uk/report_uk.docx",
+        "submission/uk/report_uk.pdf",
+        "docs/report_uk_validation.md",
+        "research/challenges/16_report_tooling.md"
+      ],
+      "acceptance_gates": [
+        "Ukrainian report is complete on scientific content and uses only verified results.",
+        "Current national formatting/page/size requirements are checked against rendered files.",
+        "Sources support claims, and original/AI/student contributions are not fabricated.",
+        "All pages are visually inspected; any remaining personal/release items are explicit."
+      ]
+    },
+    {
+      "id": "17",
+      "title": "Prepare the international English paper and synchronized supporting documents",
+      "prompt": "prompts/17_REPORT_EN_AND_CITATIONS.md",
+      "planning_minutes": [
+        180,
+        240
+      ],
+      "dependencies": [
+        "16"
+      ],
+      "expected_artifacts": [
+        "documents/report_en.md",
+        "submission/international/report_en.pdf",
+        "submission/international/report_en.docx",
+        "documents/abstracts_uk_en.md",
+        "docs/glossary.md",
+        "docs/citation_audit.md",
+        "docs/report_en_validation.md"
+      ],
+      "acceptance_gates": [
+        "All international template sections exist and <=20 total pages are verified.",
+        "Abstract is within the current word limit; personal/external contributions are honest.",
+        "Numbers and claims agree across languages and source ledger.",
+        "All rendered pages and references have been checked."
+      ]
+    },
+    {
+      "id": "18",
+      "title": "Produce the demonstration, presentation, narration package and defense kit",
+      "prompt": "prompts/18_PRESENTATION_AND_VIDEO.md",
+      "planning_minutes": [
+        180,
+        240
+      ],
+      "dependencies": [
+        "17"
+      ],
+      "expected_artifacts": [
+        "presentation/final_deck.pptx",
+        "presentation/final_deck.pdf",
+        "presentation/speaker_notes_en.md",
+        "video/narration_en.md",
+        "video/captions_en.srt",
+        "video/demo_draft_or_final.mp4",
+        "video/metadata.json",
+        "contribution/qa_defense.md",
+        "docs/media_validation.md"
+      ],
+      "acceptance_gates": [
+        "All demo screens and figures correspond to actual artifacts/results.",
+        "Video timing and narration status are measured and honest.",
+        "Final presentation and national/international formats are not conflated.",
+        "No publication, impersonation or fabricated student contribution occurs."
+      ]
+    },
+    {
+      "id": "19",
+      "title": "Validate the complete submission package and produce a truthful handoff",
+      "prompt": "prompts/19_RELEASE_PREFLIGHT.md",
+      "planning_minutes": [
+        180,
+        240
+      ],
+      "dependencies": [
+        "18"
+      ],
+      "expected_artifacts": [
+        "submission/manifest.json",
+        "submission/readiness.json",
+        "submission/HANDOFF_RU.md",
+        "submission/uk/",
+        "submission/international/",
+        "submission/supporting/",
+        "docs/final_preflight.md",
+        "STATUS.json",
+        "NEXT.md"
+      ],
+      "acceptance_gates": [
+        "Every promised submission artifact has an actual file or an explicit blocker.",
+        "Current requirements and evidence consistency are checked, not presumed.",
+        "Private data/licenses and real student/AI contributions are handled correctly.",
+        "No unauthorized publish/send/submit actions occur; readiness reflects reality."
+      ]
+    }
+  ]
+}

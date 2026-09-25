@@ -1,0 +1,12 @@
+B00 CLI capability checks, 2026-09-25 UTC
+Installed: codex-cli 0.149.0, /usr/bin/codex.
+`codex --help` and `codex exec --help`: --search (root), exec, --strict-config, --ephemeral, -m, -c, --sandbox, --output-last-message and stdin '-' are documented by installed help.
+`codex --strict-config features list`: rejected; strict-config does not apply to features in this build. This was not used as evidence of config validity.
+Harmless `codex exec --strict-config --ephemeral --sandbox read-only -m gpt-6-sol -c model_reasoning_effort=high ... -`: failed, HTTP 400, 'gpt-6-sol' not supported with a ChatGPT account.
+Same harmless invocation with gpt-5.6-sol/high: exit 0, TEXTILEROUTE_CLI_OK.
+Same with gpt-5.6-sol/medium: exit 0, TEXTILEROUTE_SOL_MEDIUM_OK.
+Same with gpt-5.6-luna/xhigh: exit 0, TEXTILEROUTE_LUNA_OK.
+`codex --search exec --strict-config --ephemeral --sandbox read-only -m gpt-5.6-sol -c model_reasoning_effort=high --json ... -`: exit 0, emitted web_search item events and official Subagents URL.
+Exact planned runner argument pattern with --search, exec, --strict-config, --ephemeral, -m gpt-5.6-sol, -c model_reasoning_effort=high, --sandbox workspace-write, --output-last-message, stdin '-': exit 0, TEXTILEROUTE_RUNNER_TEMPLATE_OK; prompt explicitly forbade edits.
+Raw process logs retained only in gitignored .agent/runtime/; no credential values copied here.
+`codex exec --strict-config --ephemeral --sandbox read-only ... -` without `-m` and with project `.codex/config.toml` present: exit 0, process header reported `model: gpt-5.6-sol`, confirming the trusted project config selected the CLI fallback.

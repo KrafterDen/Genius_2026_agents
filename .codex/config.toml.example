@@ -1,0 +1,11 @@
+# Activate only after bootstrap validates the installed Codex schema and availability.
+# Merge project-local settings; do not overwrite existing or global configuration.
+model = "gpt-6-sol"
+model_reasoning_effort = "high"
+sandbox_mode = "workspace-write"
+
+[agents]
+enabled = true
+max_concurrent_threads_per_session = 3
+default_subagent_model = "gpt-6-luna"
+default_subagent_reasoning_effort = "xhigh"

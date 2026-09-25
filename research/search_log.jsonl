@@ -1,0 +1,2 @@
+{"at": "2026-09-25", "query": "site:developers.openai.com/codex subagents agents config.toml model reasoning effort", "purpose": "Current official native role syntax", "result_url": "https://learn.chatgpt.com/docs/agent-configuration/subagents", "outcome": "opened; role keys verified"}
+{"at": "2026-09-25", "query": "site:developers.openai.com/codex noninteractive exec CLI worktrees", "purpose": "Current official noninteractive tooling", "result_url": "https://learn.chatgpt.com/docs/non-interactive-mode", "outcome": "independent reviewer opened official page"}

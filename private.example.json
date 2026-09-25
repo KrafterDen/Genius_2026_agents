@@ -1,0 +1,12 @@
+{
+  "note": "Copy to gitignored private/participant.json only with actual authorized information. Never invent missing fields.",
+  "student_name_uk": null,
+  "student_name_en": null,
+  "school": null,
+  "eligibility_evidence": null,
+  "teammate": null,
+  "mentor": null,
+  "registration_route": null,
+  "consent_status": "unknown",
+  "publish_approval": false
+}

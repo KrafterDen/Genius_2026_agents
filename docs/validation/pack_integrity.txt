@@ -1,0 +1,1 @@
+PASS: structure, JSON, TOML,20 prompts, source IDs and integrity manifest.

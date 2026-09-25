@@ -1,0 +1,13 @@
+test_empty_identifier_rejected (test_contracts.ContractChecks.test_empty_identifier_rejected) ... ok
+test_no_model_requires_review (test_contracts.ContractChecks.test_no_model_requires_review) ... ok
+test_conflicting_nested_writers_rejected (test_validator.ValidatorFaultRehearsal.test_conflicting_nested_writers_rejected) ... ok
+test_invalid_state_and_missing_artifact_remain_failed (test_validator.ValidatorFaultRehearsal.test_invalid_state_and_missing_artifact_remain_failed) ... ok
+test_path_traversal_and_absolute_path_rejected (test_validator.ValidatorFaultRehearsal.test_path_traversal_and_absolute_path_rejected) ... ok
+test_safe_rerun_is_idempotent (test_validator.ValidatorFaultRehearsal.test_safe_rerun_is_idempotent) ... ok
+test_stopped_unknown_model_network_and_failed_command (test_validator.ValidatorFaultRehearsal.test_stopped_unknown_model_network_and_failed_command) ... ok
+test_symlink_escape_rejected (test_validator.ValidatorFaultRehearsal.test_symlink_escape_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.013s
+
+OK

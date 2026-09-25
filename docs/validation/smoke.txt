@@ -1,0 +1,1 @@
+{"sample_id": "synthetic-smoke-001", "decision": "REVIEW", "reason": "No validated spectrum or profile", "synthetic": true}

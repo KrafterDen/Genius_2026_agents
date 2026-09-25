@@ -1,0 +1,5 @@
+{
+  "schema_version": 1,
+  "tasks": [],
+  "rule": "Every completed task needs an evidence artifact and verification, not an untested assertion."
+}

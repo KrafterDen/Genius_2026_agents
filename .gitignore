@@ -1,0 +1,28 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.env
+.env.*
+!.env.example
+private/
+data/raw/
+data/processed/
+.agent/runtime/
+.agent/locks/
+*.log
+*.tmp
+.DS_Store
+# Add model/checkpoint rules deliberately after deciding which shareable artifacts to retain.
+# Local experimental outputs may contain spectra, predictions or serialized models.
+results/runs/
+data/cache/
+*.pkl
+*.joblib
+*.pt
+*.onnx
+*.sqlite
+# Group IDs and source manifests need a release review before publication.
+data/manifests/
+data/splits/

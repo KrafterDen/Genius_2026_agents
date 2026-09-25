@@ -1,0 +1,5 @@
+B00 revision log
+- First controlled-test run passed 8 tests.
+- After tightening the task inventory validator, one test fixture lacked the newly required `passed=false` field and the suite failed (1/8). The fixture was corrected; no production state was marked passed on that failed run. Final test result is in `docs/validation/tests.txt`.
+- `codex --strict-config features list` rejected that flag; CLI config validation used the documented `exec` path instead. The rejected GPT-6 Sol CLI invocation is recorded in `docs/validation/cli_checks.txt` and was not used as success evidence.
+- The first final validator run redirected stdout to its own evidence file; shell truncation made that run fail. A separate gitignored runtime output path was used for the next run; it returned PASS, and the PASS output was copied to `docs/validation/validator.txt`. The block was rechecked after that repair. The independent read-only auditor caught the transient stale failure record before the repair was visible to it.
