@@ -1,13 +1,21 @@
 {
   "block_id": "05",
-  "status": "not_started",
-  "started_at": null,
-  "ended_at": null,
-  "elapsed_minutes": null,
-  "under_target_reason": null,
-  "gates": [],
-  "evidence": [],
-  "actual_models": [],
-  "blockers": [],
-  "next_action": "Execute TextileRoute_Codex_Prompt_Pack/prompts/05_*.md after dependencies pass."
+  "status": "needs_revision",
+  "started_at": "2026-09-25T17:52:00Z",
+  "ended_at": "2026-09-25T18:03:09Z",
+  "elapsed_minutes": 11.2,
+  "under_target_reason": "B03 source and B04 plan made the code scope small; current no-tests instruction prohibits the required execution gates and related depth work. No idle or fabricated time.",
+  "gates": [
+    {"id": 1, "status": "unverified", "reason": "Clean prepare command not executed."},
+    {"id": 2, "status": "unverified", "reason": "Leakage and deliberate-violation tests prohibited and not run."},
+    {"id": 3, "status": "partially_evidenced", "reason": "Explicit code and docs reviewed statically; runtime behavior unverified."},
+    {"id": 4, "status": "unverified", "reason": "No real smoke, runtime or peak memory measurement."}
+  ],
+  "evidence": [".agent/block_reports/B05.md", "docs/data_pipeline.md", "research/challenges/05_pipeline.md", "research/decisions/ADR-005-data-pipeline.md", "src/textileroute/data/", "src/textileroute/spectra/", "scripts/prepare_data.py", "configs/open_textile_v1_sources.json"],
+  "actual_models": [
+    {"surface":"desktop root","requested":"gpt-6-sol/high","observed":"unknown; not exposed"},
+    {"surface":"native read-only independent challenger","requested":"gpt-6-luna/xhigh","observed":"spawn and findings observed; runtime identity not exposed"}
+  ],
+  "blockers": ["Current user/root AGENTS.md prohibits B05 tests and real-data smoke; four acceptance gates cannot be marked passed."],
+  "next_action": "cat STATUS.json NEXT.md .agent/execplans/B05.md TextileRoute_Codex_Prompt_Pack/prompts/05_DATA_PIPELINE.md"
 }

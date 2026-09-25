@@ -2,14 +2,14 @@
   "schema_version": 1,
   "project": "TextileRoute",
   "active_block": "05",
-  "project_stage": "pipeline_implementation_pending",
+  "project_stage": "pipeline_prepared_gates_unverified",
   "submission_ready": false,
   "student_contribution_verified": false,
-  "last_checkpoint": "2026-09-25T17:50:23Z",
+  "last_checkpoint": "2026-09-25T18:03:09Z",
   "blocked_on": [
-    "B05 requires tests and smoke execution; current user/root AGENTS.md explicitly prohibit creating or running tests",
+    "B05 code and docs are prepared, but required clean reconstruction, leakage tests, real smoke and memory execution remain unverified under current user/root AGENTS.md prohibition",
     "NIST stronger-source file access unavailable; optional for current narrowed pipeline",
     "authentic student contribution and release gates"
   ],
-  "next_action": "cat STATUS.json NEXT.md TextileRoute_Codex_Prompt_Pack/prompts/05_DATA_PIPELINE.md"
+  "next_action": "cat STATUS.json NEXT.md .agent/execplans/B05.md TextileRoute_Codex_Prompt_Pack/prompts/05_DATA_PIPELINE.md"
 }

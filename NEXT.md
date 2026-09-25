@@ -1,11 +1,11 @@
-# Next action — B05 audited data pipeline
+# Next action — B05 acceptance gates
 
-B00–B04 passed. B04 froze an **exploratory grouped protocol** for 68 nominally labeled OpenTextile pieces in 67 conservative groups. Its primary endpoint is parent-group-equal MAE for the authors' cotton+wool+lyocell sum. No model was fit, no test was run, no untouched final set exists, and no formal selective-risk guarantee is claimed. The protocol SHA-256 and actual source access are in `.agent/block_reports/B04.md`. `submission_ready=false`.
+B00–B04 are passed. B05 is **`needs_revision`**: source-verified piece-level ingestion, transforms, exact B04 group-map reading, a prepare CLI and documentation have been written, but no B05 command or tests have been run. The current user/root `AGENTS.md` prohibits creating, modifying or running all tests unless this request explicitly asks for them. That includes the B05 leakage checks and real-data smoke execution. Do not convert static review into a passed gate or proceed to dependent B06–B19. No model was fit, no predictions were inspected, no final-test information was consumed, and `submission_ready=false`.
 
-From this repository root, run this exact read command before continuing in Codex:
+From the repository root, the exact recovery read command is:
 
 ```sh
-cat STATUS.json NEXT.md TextileRoute_Codex_Prompt_Pack/prompts/05_DATA_PIPELINE.md
+cat STATUS.json NEXT.md .agent/execplans/B05.md TextileRoute_Codex_Prompt_Pack/prompts/05_DATA_PIPELINE.md
 ```
 
-Then create `.agent/execplans/B05.md` and implement the data ingestion and grouping code within the frozen B04 protocol. Do not execute downloaded example scripts. Keep raw data gitignored and one writer per file. **Do not create, modify or run tests** under the current user/root AGENTS.md instruction, despite B05's expected test files and smoke gate. Record the gate as unverified or blocked rather than claiming B05 passed. Do not run the external runner recursively. If interrupted, B04's plan/report, protocol files and B03 manifest/raw files form the checkpoint.
+Review `.agent/block_reports/B05.md`, `docs/data_pipeline.md`, `research/challenges/05_pipeline.md` and ADR-005. The unexecuted future preparation command is `python scripts/prepare_data.py`; it is **not** an instruction to run a test under the present request. B05 gates require a new explicit user request for tests before real reconstruction, deliberate leakage checks and memory measurement can be recorded. Until then, preserve the checkpoint and original ignored raw files. The release still needs authentic student work, narration and publication approval; do not impersonate or publish.

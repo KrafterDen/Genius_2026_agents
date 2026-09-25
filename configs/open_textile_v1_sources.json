@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "dataset_doi": "10.5281/zenodo.18269172",
+  "version": "1.0",
+  "license": "CC-BY-4.0",
+  "source_record_url": "https://zenodo.org/api/records/18269172",
+  "checked_on": "2026-09-25",
+  "required_files": {
+    "ground_truth_final.csv": {
+      "size_bytes": 3584,
+      "source_md5": "ff33a7ed29129e98209f4e44bd6fc32e",
+      "local_sha256": "35a0ddc49bbabea22af4a5c17faa41ff20c80fb33d84acb77925d7c871e7e1b0"
+    },
+    "swir_mean_spectra.csv": {
+      "size_bytes": 217351,
+      "source_md5": "57d12e8b7d2ddb37dd89824ec975297f",
+      "local_sha256": "06dd11fab625b9c0c3c5064a316eeb6e924a60eeca1c8a7681acc733bc486385"
+    },
+    "swir_mean_spectra_coordinates.csv": {
+      "size_bytes": 1947,
+      "source_md5": "d8d9eb71d51e895ed27a2d2ba6dd1ac4",
+      "local_sha256": "262a501af7d5bae385400125de54421f89e0e5132d881b02ccd2a5b6d43adabf"
+    },
+    "rgb_mean_values.csv": {
+      "size_bytes": 4840,
+      "source_md5": "56ce6d1849816176db1236046a567836",
+      "local_sha256": "1eec793dd6109e2516059dd86153d78df7a439ce6358c2c59378b1dd413ce7f7"
+    }
+  }
+}
