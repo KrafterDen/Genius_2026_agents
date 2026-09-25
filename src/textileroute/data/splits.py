@@ -2,11 +2,15 @@
 
 from __future__ import annotations
 
+import hashlib
 import json
 from dataclasses import dataclass
 from pathlib import Path
 
 from .open_textile import DataContractError, OpenTextileData
+
+
+EXPECTED_B04_SPLIT_PLAN_SHA256 = "f39f304523ffecb130541de7194a2bdfb3e3f0564313ab0c137b427aad1196c7"
 
 
 @dataclass(frozen=True)
@@ -24,7 +28,10 @@ class FrozenGroupSplit:
 
 
 def load_frozen_group_split(plan_path: Path, data: OpenTextileData) -> FrozenGroupSplit:
-    plan = json.loads(plan_path.read_text(encoding="utf-8"))
+    plan_bytes = plan_path.read_bytes()
+    if hashlib.sha256(plan_bytes).hexdigest() != EXPECTED_B04_SPLIT_PLAN_SHA256:
+        raise DataContractError("B04 frozen split plan hash changed; amend before preparation")
+    plan = json.loads(plan_bytes)
     if plan.get("dataset") != "OpenTextile-NIR v1.0 small tables":
         raise DataContractError("split plan is not for audited OpenTextile v1.0")
     outer = plan.get("outer_design", {})
@@ -52,5 +59,5 @@ def load_frozen_group_split(plan_path: Path, data: OpenTextileData) -> FrozenGro
         fold_by_parent_group=tuple(sorted(group_to_fold.items(), key=lambda item: int(item[0]))),
         fold_by_piece=tuple(sorted(piece_to_fold.items())),
         fold_count=5,
-        source_protocol=str(plan_path),
+        source_protocol="protocol/split_plan.json",
     )

@@ -5,9 +5,9 @@
   "project_stage": "pipeline_prepared_gates_unverified",
   "submission_ready": false,
   "student_contribution_verified": false,
-  "last_checkpoint": "2026-09-25T18:03:09Z",
+  "last_checkpoint": "2026-09-25T21:48:31Z",
   "blocked_on": [
-    "B05 code and docs are prepared, but required clean reconstruction, leakage tests, real smoke and memory execution remain unverified under current user/root AGENTS.md prohibition",
+    "B05 code and docs were statically amended on 2026-09-26, but required clean reconstruction, leakage tests, real smoke and memory execution remain unverified under current user/root AGENTS.md prohibition",
     "NIST stronger-source file access unavailable; optional for current narrowed pipeline",
     "authentic student contribution and release gates"
   ],

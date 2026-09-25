@@ -1,7 +1,7 @@
 # Batched human actions
 
 ## Needed now
-None for the repository bootstrap or B01 source research. The agent can inspect public dataset metadata and current contest rules without identity or purchases.
+None for B05 local pipeline drafting. The agent can inspect public sources and continue independent drafts without identity or purchases. As of the 2026-09-26 organizer recheck, the optional **affiliation** window is 23 September–7 October 2026; individual project registration remains scheduled for 14 October–14 November. The participant should choose a real single route when registration is actually undertaken. No affiliation or registration has been initiated by the agent.
 
 ## Needed before final release
 - Provide the participant's true identity, grade and age at registration, Ukrainian general-secondary enrollment evidence, residence, teammate/mentor status and any required consents through a private, gitignored channel when the applicable registration route is known. Residence alone does not settle Ukrainian eligibility. The current national page leaves enrollment while living abroad unresolved.

@@ -41,8 +41,8 @@ def identity_reflectance(
         raise SpectrumContractError("wavelength and reflectance lengths differ")
     if any(a >= b for a, b in zip(wavelengths, wavelengths[1:])):
         raise SpectrumContractError("wavelengths must increase in nm")
-    if any(value < 0 for value in values):
-        raise SpectrumContractError("negative reflectance requires source investigation")
+    if any(value < 0 or value > 1 for value in values):
+        raise SpectrumContractError("reflectance outside audited fractional [0,1] scale")
     return ProcessedSpectrum(wavelengths, values, "source_mean_reflectance")
 
 

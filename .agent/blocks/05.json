@@ -11,11 +11,22 @@
     {"id": 3, "status": "partially_evidenced", "reason": "Explicit code and docs reviewed statically; runtime behavior unverified."},
     {"id": 4, "status": "unverified", "reason": "No real smoke, runtime or peak memory measurement."}
   ],
-  "evidence": [".agent/block_reports/B05.md", "docs/data_pipeline.md", "research/challenges/05_pipeline.md", "research/decisions/ADR-005-data-pipeline.md", "src/textileroute/data/", "src/textileroute/spectra/", "scripts/prepare_data.py", "configs/open_textile_v1_sources.json"],
+  "evidence": [".agent/block_reports/B05.md", "docs/data_pipeline.md", "research/challenges/05_pipeline.md", "research/decisions/ADR-005-data-pipeline.md", ".agent/recovery_2026-09-26.md", "docs/requirements_recheck_2026-09-26.md", "src/textileroute/data/", "src/textileroute/spectra/", "scripts/prepare_data.py", "configs/open_textile_v1_sources.json"],
   "actual_models": [
     {"surface":"desktop root","requested":"gpt-6-sol/high","observed":"unknown; not exposed"},
-    {"surface":"native read-only independent challenger","requested":"gpt-6-luna/xhigh","observed":"spawn and findings observed; runtime identity not exposed"}
+    {"surface":"native read-only independent challenger","requested":"gpt-6-luna/xhigh","observed":"spawn and findings observed; runtime identity not exposed"},
+    {"surface":"native read-only recovery evidence auditor","requested":"gpt-6-luna/xhigh","observed":"spawn and findings observed; runtime identity not exposed"}
   ],
   "blockers": ["Current user/root AGENTS.md prohibits B05 tests and real-data smoke; four acceptance gates cannot be marked passed."],
+  "recovery_continuations": [
+    {
+      "local_date": "2026-09-26",
+      "pre_run_revision": "503173f",
+      "result": "repository evidence and source hashes audited; split hash pinned; feature/metadata output separated; acceptance gates unchanged",
+      "tests_or_smoke_run": false,
+      "model_fit_or_final_set_access": false,
+      "evidence_path": ".agent/recovery_2026-09-26.md"
+    }
+  ],
   "next_action": "cat STATUS.json NEXT.md .agent/execplans/B05.md TextileRoute_Codex_Prompt_Pack/prompts/05_DATA_PIPELINE.md"
 }

@@ -69,27 +69,32 @@ def prepare_open_textile(
         "representation": "source_mean_swir_reflectance",
         "wavelengths": data.wavelengths_nm,
     })
-    sample_lines = []
+    spectrum_lines = []
+    metadata_lines = []
     fold_by_piece = dict(split.fold_by_piece)
     for piece in data.pieces:
-        sample_lines.append(_canonical_json({
+        spectrum_lines.append(_canonical_json({
+            "piece_id": piece.piece_id,
+            "spectrum_reflectance": piece.spectrum_reflectance,
+        }).rstrip(b"\n"))
+        metadata_lines.append(_canonical_json({
             "piece_id": piece.piece_id,
             "parent_group_id": piece.parent_group_id,
             "outer_fold": fold_by_piece[piece.piece_id],
             "label_status": piece.label_status,
             "reported_percent": dict(piece.reported_percent),
             "author_defined_natural_share_nominal": piece.author_defined_natural_share,
-            "spectrum_reflectance": piece.spectrum_reflectance,
             "swir_roi_y_start_y_end_x_start_x_end": piece.swir_roi,
             "rgb_mean_context_only": piece.rgb_mean,
             "color_context_only": piece.color,
             "texture_context_only": piece.texture,
             "extra_information": piece.extra_information,
         }).rstrip(b"\n"))
-    samples_bytes = b"\n".join(sample_lines) + b"\n"
+    spectra_bytes = b"\n".join(spectrum_lines) + b"\n"
+    metadata_bytes = b"\n".join(metadata_lines) + b"\n"
     split_bytes = _canonical_json({
         "schema_version": 1,
-        "source_plan": str(split_plan_path),
+        "source_plan": split.source_protocol,
         "source_plan_sha256": hashlib.sha256(split_plan_path.read_bytes()).hexdigest(),
         "fold_count": split.fold_count,
         "group_fold": dict(split.fold_by_parent_group),
@@ -98,7 +103,8 @@ def prepare_open_textile(
     })
     hashes = {
         "wavelengths_nm.json": _write_once(processed_dir / "wavelengths_nm.json", wavelengths_bytes),
-        "samples.jsonl": _write_once(processed_dir / "samples.jsonl", samples_bytes),
+        "spectra.jsonl": _write_once(processed_dir / "spectra.jsonl", spectra_bytes),
+        "metadata.jsonl": _write_once(processed_dir / "metadata.jsonl", metadata_bytes),
         "frozen_outer_folds.json": _write_once(split_output_path, split_bytes),
     }
     provenance_bytes = _canonical_json({
